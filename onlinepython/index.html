@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+    <script src="http://www.skulpt.org/static/skulpt.min.js" type="text/javascript"></script>
+    <script src="http://www.skulpt.org/static/skulpt-stdlib.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <script src="js/sweetalert-dev.js"></script>
+    <script src="js/linedtextarea.js"></script>
+    <script src="js/FileSaver.js"></script>
+    <script src="js/dopython.js" type="text/javascript"></script>
+    <script src="js/usability.js" type="text/javascript"></script>
+    <title>Python Turtle!</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Mono' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/linedtextarea.css">
+    <link rel="stylesheet" href="../css/basic.css">
+    <link rel="stylesheet" href="../css/sweetalert.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="description" content="A Python playground for the Junior Homebrew Club">
+    <meta name="author" content="Jack Weatherilt">
+  </head>
+  <body>
+    <div class="playground half">
+      <h3><a href="http://wryters.github.io/junior-homebrew/" target="_blank"><img src="images/black100-trans.png" style="height: 1.5em; vertical-align: middle; margin-top: -0.15em; float: right;"/></a>Homebrew a drawing!</h3>
+
+      <textarea id="yourcode"  autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" cols="40" rows="10" style="height: 70%;"
+>import turtle
+
+t = turtle.Turtle()
+t.color("white")        # the line is made white because
+t.forward(100)          # the background is black
+
+
+print("Hello World")
+</textarea>
+      <br />
+      <button type="button" id="run">Run</button>
+      <div class="filec">
+        <span id="codename"><input type="text" placeholder="name_me"/>.py</span>
+        <div id="open" class="button">Open</div>
+        <a class="button" download target="_blank" id="download">Download</a>
+
+        <input id="upfile" type="file" value="upload"/>
+      </div>
+
+
+    </div>
+    <pre id="dimensions"></pre>
+    <div class="output half">
+
+    </div>
+    <img id="lifering" src="images/lifering.png" />
+  </body>
+</html>
