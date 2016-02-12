@@ -1,54 +1,5 @@
 /* CSS for Junior Homebrew Playground, based on Skeleton */
 /* Custom Styles */
-.teacher {
-  float: right;
-}
-
-.student{
-  float:left;
-}
-
-#homebody {
-  color: #FFF;
-  font-family: "Roboto Mono" !important;
-  font-weight: 100 !important;
-  text-align: center;
-  padding-top: 3rem;
-  font-size: 3rem;
-  background: linear-gradient(
-    to right,
-    #00C853 0%,
-    #00C853 49.5%,
-    #43A047 49.5%,
-    #43A047 100%
-  );
-}
-
-.homebtn {
-  font-size: 3rem;
-  font-weight: 100;
-  line-height: 3.2rem;
-  display: inline-block;
-  padding: 15px 30px;
-  color: #E8F5E9;
-  text-align: center;
-  letter-spacing: .1rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  white-space: nowrap;
-  background-color: transparent;
-  border-radius: 4px;
-  border: 1px solid #E8F5E9;
-  cursor: pointer;
-  box-sizing: border-box;
-  font-family: "Open Sans" !important;
-}
-
-.homebtn:hover {
-  color: #FFF;
-  border-color: #FFF;
-  outline: 0;
-}
 
 #codename {
   font-family: "Roboto Mono";
