@@ -1,5 +1,6 @@
-$(window).load(function() {
-  // Pretty stuff DOESNT WORK YET!
+/*global $:false, jQuery:false, window:false */
+$(window).load(function () {
+  /* Pretty stuff DOESNT WORK YET!
   $("#lifering").mouseover(function() {
     $(this).animate({opacity: 1}, 1000);
   });
@@ -7,6 +8,7 @@ $(window).load(function() {
   $("#lifering").mouseleave(function() {
     $(this).animate({opacity: 0.5}, 1000);
   });
+  */
 
   // Usability: improving how the user codes with the site
   $('#dimensions').html($(".output").width() + ' x ' + $(".output").height());
