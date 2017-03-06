@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,400i,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <meta charset="UTF-8" />
+    <meta name="pinterest" content="nopin" />
+    <title>FaceArray</title>
+    <meta name="description" content="">
+</head>
+<body>
+<div class="main-container">
+    <header>
+        <a href="/"><img src="/assets/images/icon-white.png" class="mini-logo"/></a>
+    </header>
+    <h1>FaceArray</h1>
+    <h5 id="arrays-for-loops">ARRAYS, FOR LOOPS</h5>
+<p>Facebook is getting old (plus you can&#39;t use it until you&#39;re 13)! We need a better way to store our friends, and we will be writing the code to make sure that it&#39;s safe!</p>
+<p><img src="images/facebook.jpg" alt="Facebook? No!"></p>
+<p>By the end of the lesson you will feel confident using loops in Python, in particular, <strong>FOR loops</strong>. These will allow you to repeat lines of code over and over again!</p>
+<p>After you&#39;ve got this sorted, there won&#39;t be any need to copy and paste code again!</p>
+<p>Arrays will be re-introduced and used again, to help you learn about <strong>data structures</strong> in more detail, and how we can use them in loops! All of this will be done using skills you already have, such as inputs and outputs to create some snazzy new code!</p>
+<h2 id="task-1-array-and-user-inputs-reminder-">Task 1: Array and user inputs reminder!</h2>
+<p>You can probably make a mental list of some of your best friends, but sometimes hey can get hard to remember (especially when you&#39;re as popular as you are).</p>
+<p>Do you think we can use some <strong>data structures</strong> to help you digitalise this list? How about entering data? Let&#39;s start with making an array, and asking the user for some data!</p>
+<h4 id="step-list-">Step List:</h4>
+<ul>
+<li>Create an empty <strong>array</strong> (or list). It will hold a list of your best friends, so make the variable appropriate!</li>
+<li>Assign a best friend variable to the user input asking who your <em>best-est</em> friend is.</li>
+</ul>
+<p>Simple enough? If you think you can manage it, put the input into the array (hint: you have to <code>append</code> it).</p>
+<h4 id="got-lost-here-s-the-code-">Got lost? Here&#39;s the code.</h4>
+<pre><code class="lang-python"># An empty array that will shortly contain your friends
+BFArray = []
+
+# Asking the user for their best friend
+BestFriend = input(&quot;Who is your best friend?&quot;)
+
+# We don&#39;t do anything with the information yet!
+</code></pre>
+<h5 id="what-s-going-on-">What&#39;s going on?!</h5>
+<p>An empty array is created that will act as a placeholder for friends to be added further on. We assign it to a variable, so that we can keep track of it, and modify it later on.</p>
+<p>Keeping <strong>variable assignment</strong> at the top is considered standard. It means we can see what is used in the program, all in one place, and that the computer won&#39;t have a hard time finding it!</p>
+<p>A user input asking for the user&#39;s best friend is assigned to its own variable being <code>BestFriend</code>. Did you manage to put the input into the array?
+​</p>
+<h2 id="task-2-for-loops">Task 2: FOR loops</h2>
+<p>You have more than one friend, right? So we are going to want to ask &#39;Name your friend&#39; or something along those lines more than once, this is where for loops will allow us to execute lines of code multiple times, this will save time and allow for easier editing of your code if something needs changing in the future.</p>
+<p>Now we have a few names of friends, but what are we doing with these values? We created an empty array earlier that acts as a simple list meaning we can add all of the friends into the array. The names in the array can then be printed very simply in a short amount of code later.
+​</p>
+<h4 id="step-list-">Step List:</h4>
+<ul>
+<li>Use a for loop in whatever appropriate range to ask for the user input of the next friend and add it onto the end of the array using the append function, 3 or 4 friends keeps it practical, remember python starts counting at 0 and stops counting the number before the one that is put down e.g. &#39;for i in range (0,4)&#39; will run 4 times.</li>
+</ul>
+<h4 id="don-t-just-copy-this-here-s-some-help-">Don&#39;t just copy this! Here&#39;s some help.</h4>
+<pre><code class="lang-python">for i in range (0,4): # A for loop will run 4 times
+    Friend = input(&quot;Who is your next favourite friend?&quot;)
+    # This question will be asked however many times the range is for and retrieves the user input to then put in the list
+    BFArray.append(Friend)
+    # The append function puts the value at the end of the array by default, this is fine for our needs
+</code></pre>
+<h5 id="what-s-happening-here-">What&#39;s happening here?</h5>
+<p>A <strong>FOR</strong> loop is executed in this example 4 times – <strong><em>i</em></strong> is a  variable that is used to count the through the loop.</p>
+<p>Inside of the loop a variable labeled &#39;Friend&#39; is assigned to the user input that the user enters. We&#39;ll use this variable, Friend, to contain someones name.</p>
+<p>The next line uses the append function to put this new friend value into the array. This is done by the <code>array.append(value)</code>.</p>
+<p><strong>NOTE:</strong> This is then repeated with a new variable for Friend when the user enters a new user input and is put on the end of the array!</p>
+<h2 id="task-3-best-friends-using-different-functions-within-for-loops">Task 3: Best friends - Using different functions within for loops</h2>
+<p>Now we have an array that contains a list of best friends but does not contain the very best friend. No worries here as this was stored in its own variable.</p>
+<p>We are going to want to print this first as otherwise the friends that come afterwards would be seen as better friends than your best friend as they would be printed first. We are going to use another for loop in order to print the friends but in a slightly different way.</p>
+<h4 id="step-list-">Step List:</h4>
+<ul>
+<li><p>Print out your best friend as this one is not in the array although could quite easily be implemented to be put at the front of the array</p>
+</li>
+<li><p>Use another for loop which will go through the array and print each index out. However (0,4) should not be used as if we wanted to change the amount of times the user input is asked it would mean that remembering to change the range here would be necessary as well. As we want it to print out the array the range only has to be the length of the array. This can be done using (len(array)) as the range</p>
+</li>
+</ul>
+<h4 id="got-lost-here-s-the-code-">Got lost? Here&#39;s the code.</h4>
+<pre><code class="lang-python">print (BestFriend) # The best friend is not in the array and although it could be I have a simple print statement above the repeating print loop so that the best friend is shown first
+
+# Here, we create a range of numbers
+for i in range(len(BFArray)): # len() gets the amount of items in the array
+    # It&#39;s the &quot;length&quot;
+
+    # Print the best friend at index i
+    print (BFArray[i])
+</code></pre>
+<p><strong>REMEMBER:</strong> It&#39;s really important that you <strong>indent</strong> your code, since this is the code that will be repeated! If the code isn&#39;t indented, the computer doesn&#39;t know</p>
+<p>The first line simply <strong>prints</strong> the best friend variable which will contain the name that the user first entered when the 2nd line of code ran.</p>
+<p>This line is above the for loop as the list of names need to go from best friend to least best friend.</p>
+<p>Finally another for loop is used however the range is determined by the length of the array rather than a hardcoded integer which means that the loop will not accidentally run not enough times or attempt print a variable from the array in a position that does not exist i.e. index 4 (the 5th value in the array) would not exist and having it run in this range would cause errors that can easily be avoided. The code inside the for loop simply uses the same hypothetical i to count through the index printing each name inside of the variable!</p>
+<h4 id="why-is-index-4-the-5th-value-">Why is index 4 the 5th value?</h4>
+<p>Because computers count from 0 upwards, so the first value is at index 0!</p>
+<h2 id="and-we-re-done-here-s-a-challenge-">And... we&#39;re done! Here&#39;s a challenge!</h2>
+<p>We are now capable of asking the user for their own input, this is an incredibly useful skill as it allows people to interact with the application or game in order to personalise it and make it more entertaining!</p>
+<p>We can now create an array which is known as a form of &#39;data structure&#39; in order to store information to then be used later on, this is valuable as for complex programs vast amounts of data need storing and organising to then be able to access it later on and manipulate.</p>
+<p>Finally we used for loops in order to shorten our code and repeat lines of code a chosen amount of times without having to manually copy and paste it. Loops becomes incredibly powerful later on when paired with things such as conditional statements and this shows professionalism in your code!</p>
+
+
+</div>
+</body>
+</html>

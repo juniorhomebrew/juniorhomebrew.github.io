@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,400i,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <meta charset="UTF-8" />
+    <meta name="pinterest" content="nopin" />
+    <title>Morse Talk!</title>
+    <meta name="description" content="">
+</head>
+<body>
+<div class="main-container">
+    <header>
+        <a href="/"><img src="/assets/images/icon-white.png" class="mini-logo"/></a>
+    </header>
+    <h1>Morse Talk!</h1>
+    <h5 id="dictionaries-for-loops-arrays-gpio-raspberry-pi">DICTIONARIES, FOR LOOPS, ARRAYS, GPIO &amp; RASPBERRY PI</h5>
+<p>Last time we used Morse code, we were just encoding plain English into the dots and dashes that makes up Morse code. That was interesting, but wasn&#39;t very useful to communicate. If we could use Morse code, to send flashes of light across the room, we could communicate easily!</p>
+<p><img src="images/flash.gif" alt=""></p>
+<p>This lesson, we&#39;ll be learning how to use LEDs (little lights) and buttons with the Raspberry Pi. Later on, we&#39;ll use those electronics to transmit and record Morse code messages!</p>
+<h2 id="task-1-using-leds-with-the-raspberry-pi">Task 1: Using LEDs with the Raspberry Pi</h2>
+<p>LEDs are little light bulbs that we can use really easily with the Raspberry Pi. They&#39;re very delicate, so we have to protect them with a resistor (to stop too much electricity passing through it). Hopefully your teacher has already set up the LEDs, but if not, here&#39;s a diagram!</p>
+<p><img src="images/LEDtest.png" alt="fritzing"></p>
+<p>We will be using a <strong>library</strong> called <code>gpiozero</code>. This makes using LEDs and buttons a whole lot easier!</p>
+<p>Let&#39;s start off by turning an LED on and off after 1 second using Python. This will help us send our Morse code out later!</p>
+<p>First, we&#39;ll need to import out LED module from <code>gpiozero</code>. </p>
+<pre><code class="lang-python">from gpiozero import LED
+</code></pre>
+<p>We will also need the <code>time</code> module, to make the Raspberry Pi wait.</p>
+<pre><code class="lang-python">from gpiozero import LED
+import time
+</code></pre>
+<p>Now let&#39;s get coding! We need to make a variable that tells the computer how the Raspberry Pi is connected to the LED. </p>
+<p>The Raspberry Pi has a series of pins poking out of it, as you can probably see (but don&#39;t touch!). These are called <strong>GPIO pins</strong> – they&#39;re the way the Raspberry Pi can make things happen in the real world. </p>
+<p>Each <strong>GPIO pin</strong> has a number. The numbering system is a bit weird, but this diagram should help. If your Raspberry Pi is set up correctly, it should have 2 wires connected to it. </p>
+<p><img src="images/pinout.png" alt="Header diagram"></p>
+<p><strong>It must have both wires connected!</strong> One is the &quot;live wire&quot;, whilst one goes to ground (coloured in black, and labelled &#39;GND&#39;), so that we have a complete circuit. </p>
+<p>What we must tell the Raspberry Pi is which pin the &#39;live wire&#39; is attatched to. It should be one of the pins labelled with GPIO at the beginning!</p>
+<p>Let&#39;s make our variable, that will tell the computer which pin is connected to the LED. </p>
+<p>Using the original wiring diagram, it should be pin 26 (labelled GPIO26 on the second diagram). </p>
+<pre><code class="lang-python">myLed = LED(26)
+</code></pre>
+<p>This is a normal variable, as we&#39;ve seen in lessons before. It stores the LED information, and lets us control the LED by <strong>referencing the variable</strong>.</p>
+<p>If we want to <strong>turn the LED on</strong>, we can use:</p>
+<pre><code class="lang-python">myLed.on()
+</code></pre>
+<p>If we want to <strong>turn it off</strong>, we can use:</p>
+<pre><code class="lang-python">myLed.off()
+</code></pre>
+<p>If we want to make the computer wait a certain amount of seconds (e.g. 1 second), before continuing the program, we can use:</p>
+<pre><code class="lang-python">time.sleep(1)
+</code></pre>
+<h3 id="tasks">Tasks</h3>
+<ul>
+<li>A single blink<ul>
+<li>Try making the LED flash on, wait half a second, and then flash on again!</li>
+</ul>
+</li>
+<li>4 blinks (but no copy and pasting!)<ul>
+<li>Remember <strong>for loops</strong>? They let us repeat a block of code over and over again for a certain amount of times. </li>
+<li>Can&#39;t remember the code? Here&#39;s the start of a <strong>for loop</strong> that repeats 3 times: <code>for i in range(0, 4):</code></li>
+</ul>
+</li>
+<li>Blink function<ul>
+<li>If you can remember, or are feeling confident, then try and make a function that makes the LED blink on and off. </li>
+<li>You start a function (e.g. called, <code>blink</code>), with: <code>def blink():</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="part-2-using-buttons">Part 2: Using buttons</h2>
+<p>We don&#39;t just want to send Morse code, but we also want to be able to record the code, just like old machines!</p>
+<p><img src="images/tap.gif" alt="b&amp;w tap"></p>
+<p>Let&#39;s start by connecting up our button to our Raspberry Pi using the same <strong>breadboard</strong> that we used for the LED!</p>
+<p><img src="images/button1.png" alt="fritzing button"></p>
+<p>Again, we&#39;re using <code>gpiozero</code>. But this time, we&#39;re using the <code>Button</code> module. </p>
+<p>Start a new Python file, and let&#39;s get started! Import Button from the gpiozero library.</p>
+<pre><code class="lang-python">from gpiozero import Button
+</code></pre>
+<p>Again, we need to tell the Raspberry Pi which <strong>GPIO pin</strong> the button is connected to. Remember, it&#39;s the &#39;live wire&#39; that we&#39;re looking for!</p>
+<p>Using the original diagram, that should be pin 4. Let&#39;s make a variable, similar to the way we registered the LED last time. </p>
+<pre><code class="lang-python">from gpiozero import Button 
+
+# This button is connected to pin 4
+myButton = Button(4)
+</code></pre>
+<p>Last time, we had to use the <code>time</code> library to make the Raspberry Pi wait. Now, we can tell the Raspeberry Pi to wait until the button is pressed! It&#39;s really simple. </p>
+<p>Here&#39;s a demo of how we can make the Raspberry Pi print something when the button is pressed down.</p>
+<pre><code class="lang-python">myButton = Button(4)
+
+# Wait for the button to be pressed...
+myButton.wait_for_press()
+# The Raspberry Pi won&#39;t get beyond this point until the button is pressed
+# We have to wait...
+
+# Then print this line! (after the button was pressed)
+print(&quot;The button was pressed!&quot;)
+</code></pre>
+<h3 id="tasks">Tasks</h3>
+<ul>
+<li>Flash an LED when the button is pressed</li>
+<li>Make the LED turn off when the button is pressed, and stay on when it&#39;s not.</li>
+</ul>
+<p>Another tip: to wait until the button is released, we can use: <code>myButton.wait_for_release()</code>.</p>
+<hr>
+<h1 id="more-to-come-">More to come!</h1>
+
+
+</div>
+</body>
+</html>

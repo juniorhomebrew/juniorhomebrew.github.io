@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,400i,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <meta charset="UTF-8" />
+    <meta name="pinterest" content="nopin" />
+    <title>Virtual Shopper</title>
+    <meta name="description" content="">
+</head>
+<body>
+<div class="main-container">
+    <header>
+        <a href="/"><img src="/assets/images/icon-white.png" class="mini-logo"/></a>
+    </header>
+    <h1>Virtual Shopper</h1>
+    <h5 id="arrays-operators-boolean-if-statements">ARRAYS, OPERATORS, BOOLEAN &amp; IF STATEMENTS</h5>
+<p><img src="images/pixelcat.gif" alt="Pixel Cat"></p>
+<p>Shopping online is a little different to shopping in store. No dragging around heavy metal baskets, and you get to keep constant track of your bill. Since we know how to make <strong>lists</strong> (or arrays) now with Python, we know how to keep a list of items. Let&#39;s see if we can make our own virtual shopping system. Note: Sadly no customers will be paying you at the end. And no free food.</p>
+<p>We&#39;ll be making an app where users choose which items they want, and how many, and then we tell them what they ordered, how much it will cost them, and tell them if they can (to prevent us selling products that are out of stock).</p>
+<h2 id="task-1-making-our-list-of-items-and-their-details">Task 1: Making our list of items and their details</h2>
+<!-- Break into paragraphs -->
+<p>To tell the customer what they can buy, we must be able to show them a list of all the possible items that they can purchase. You hopefully know how to use arrays to do this, but we&#39;ll just go over that for a short reminder.</p>
+<!-- Steps and reasons for doing it -->
+<h4 id="step-list-">Step List:</h4>
+<ul>
+<li>Make a variable to store your item list.</li>
+<li>Assign the variable you just made with an array with all your items.<ul>
+<li>E.g. <code>itemList = [&quot;Bananas&quot;, &quot;Eggs&quot;, &quot;Milk&quot;]</code></li>
+<li>Remember that items in an array need to be separated with commas, <code>,</code>.</li>
+<li>Also, since we&#39;re storing a string, it must have speech marks around it: <code>&quot;Milk&quot;</code>.</li>
+</ul>
+</li>
+</ul>
+<p>Okay so now we have our items, but we don&#39;t have any other details. How do you think we could store the other important details, such as <strong>price</strong>, and <strong>quantity</strong>?</p>
+<p>Remember that these properties are linked to each item, so putting them all in one mega-array would be unorganised! (and we&#39;re computer scientists, so everything needs to be tidy!
+<strong>Don&#39;t do:</strong> <code>itemList = [&quot;Bananas&quot;, 1.30, 20, &quot;Eggs&quot;,  2.00, 50, &quot;Milk&quot;, 2.10, 10]</code></p>
+<p>What if we stored these details in mini arrays?<br><strong>Like:</strong> <code>item1 = [&quot;Bananas&quot;, 1.30, 20]</code></p>
+<p>Remember to add some comments using the <code># This is a comment!</code>.</p>
+<p>Did you know what can store arrays <strong>inside</strong> of other arrays?</p>
+<ul>
+<li>You can think of these like layers, or <strong>dimensions</strong>.</li>
+<li>A single array is kind of like a long line, or one row of a table or grid. A <strong>two-dimensional</strong> array is like a grid, with rows and columns. A <strong>three-dimensional</strong> array is like a cube; and it doesn&#39;t stop there!</li>
+</ul>
+<ul>
+<li>Make an array that holds a little array inside it, for every item in your list.<ul>
+<li>You can&#39;t forget your commas! Arrays are <strong>objects</strong>, just like strings, and integers.</li>
+</ul>
+</li>
+</ul>
+<p>This is a little complicated, so here&#39;s an example of what it should look like in your code.</p>
+<pre><code class="lang-python">itemList = [[&quot;Bananas&quot;, 1.30, 20],
+            [&quot;Eggs&quot;,  2.00, 50],
+            [&quot;Milk&quot;, 2.10, 10]]
+</code></pre>
+<ul>
+<li>I&#39;ve decided to write the array across multiple lines, so that it&#39;s easier to read for humans.<ul>
+<li>The computer only thinks it&#39;s finished reading an array when it sees the corresponding, closing, square bracket: <code>]</code>.</li>
+</ul>
+</li>
+<li>So now we know how to make a multi-dimensional array, it&#39;s quite easy to understand.<ul>
+<li>It&#39;s quite simply just a big array that has arrays as the values stored inside it! A lot easier than you thought I bet!</li>
+</ul>
+</li>
+<li>Try printing your array. If you made any <strong>syntax errors</strong> (that&#39;s where the computer can&#39;t read your code properly, because you haven&#39;t written it properly), those will be brought up!</li>
+</ul>
+<h4 id="mini-challenge">Mini-challenge</h4>
+<p>Try to print just one part of the whole array, i.e. just the details of one item. You should be able to do with</p>
+<h2 id="task-2-access-the-details">Task 2: Access the details</h2>
+<!-- Break into paragraphs -->
+<p>To make our app useful, we have to be able to access each item&#39;s details induviually. This is so that we can work out useful things like left over stock, sums and more!</p>
+<p>We have to be able to get the value of part of the array or list. This is only slightly different to how we get array cell values in a one-dimensional array!</p>
+<h4 id="step-list-">Step List:</h4>
+<ul>
+<li>Print the whole array of your first item.<ul>
+<li>If you need a reminder, I would do it like: <code>print(itemList[0])</code>.<ul>
+<li>Remember that computers start at 0!</li>
+</ul>
+</li>
+<li>What we are doing here, is getting the value at <strong>index</strong> 0. That means, if we give each space in an array a value from 0 to n (n being the length of the array minus 1), we have a way to refer to the cells. This is the same as the index in a book, which tells you which page a certain term or word appears.</li>
+<li>In arrays, the index is our <strong>reference</strong> to the cell. Imagine the computer starts by looking at the first cell (the 0th index). The index then tells it how many cells away the value it&#39;s looking for is!<ul>
+<li>Therefore here, I <strong>refer</strong> to <strong>index 0</strong> of the array <strong>itemList</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Now that we&#39;ve reminded you of that, print the 2nd value (that means refering to the first index).<ul>
+<li>See how simple that is? Hopefully it makes sense!</li>
+</ul>
+</li>
+</ul>
+<p>Now it gets a bit more complicated. We know how to get values from an array with one dimension. But how do we do it with two?</p>
+<p><strong>We just give a second-level index.</strong></p>
+<p>Imagine a grid. The first index refers to which row we want to go to, and the second says which column. So in the two-dimensional array below, if I want the value &quot;tasty&quot;, then I go to index 1 (the 2nd row), and <em>then</em> index 3. If you&#39;ve done geometry, it&#39;s similar to co-ordinates (except when we image inner arrays as rows, we go down, and then across).</p>
+<p><img src="./images/2darray.png" alt="2D Array"></p>
+<p>How do we write this? Here&#39;s an example where we print the first value of the first array.</p>
+<pre><code class="lang-python">itemList = [[&quot;Bananas&quot;, 1.30, 20],
+            [&quot;Eggs&quot;,  2.00, 50],
+            [&quot;Milk&quot;, 2.10, 10]]
+
+# This should print &quot;Bananas&quot;
+print(itemList[0][0])
+</code></pre>
+<ul>
+<li>Try printing the price of eggs (2.00), using indexing.</li>
+<li>Change the quantity of Milk from 10 to 3.<ul>
+<li>You should know how to change the value of a cell in a regular array.<ul>
+<li>If you don&#39;t, here&#39;s a hint <code>itemList[0] = &quot;Changed!&quot;</code></li>
+</ul>
+</li>
+<li>Using what we just learnt, you should be able to have an educated guess. Often in computer science, we have to make an educated guess about how to solve a problem like this one!</li>
+</ul>
+</li>
+<li>Print out your new array!</li>
+</ul>
+<h4 id="couldn-t-work-it-out-">Couldn&#39;t work it out?</h4>
+<pre><code class="lang-python">itemList = [[&quot;Bananas&quot;, 1.30, 20],
+            [&quot;Eggs&quot;,  2.00, 50],
+            [&quot;Milk&quot;, 2.10, 10]]
+
+# This should print &quot;Bananas&quot;
+print(itemList[0][0])
+
+# Milk quantity is changed
+itemList[2][2] = 3
+
+print(itemList)
+</code></pre>
+<!-- Explain the computer science -->
+<p>What we&#39;ve done here may seem simple, but you now know how to manipulated complex data structures! What that means is that you know how to change and use values that are stored in more complicated objects, such as arrays. Pretty cool eh?</p>
+<h2 id="task-3-making-an-item-basket">Task 3: Making an item basket</h2>
+<p>appending to an array</p>
+<p>The user will want to know what they&#39;ve paid for at the end of the shop, and what&#39;s in the basket. We can keep track of this using a data structure, in this case, we&#39;ll use an array.</p>
+<h3 id="task-list-">Task list:</h3>
+<ul>
+<li>Get back up your original item list.</li>
+<li>Make an empty array, and call it <code>item1</code>.<ul>
+<li>We are going to ask the user how many of an item they want, and then add the item, quantity and total cost to the user&#39;s basket.</li>
+</ul>
+</li>
+<li><strong>Append</strong> the value <code>&quot;Bananas&quot;</code> to the first index of the array.<ul>
+<li>Try doing this without typing the word, reference the cell in the <code>itemList</code> array!</li>
+<li>Appending to an array mean adding to the end. We can append like this: <code>myArray.append(&quot;A value!&quot;)</code>. This isn&#39;t the exact code however! Try and work out how we can append to our empty <code>item1</code> array.</li>
+</ul>
+</li>
+<li>Try printing your array before appending a value, and afterwards.</li>
+</ul>
+<p>See what happened? This is very useful, because we can&#39;t use <code>myArray[0] = &quot;value&quot;</code> until we have a value at the 0th index of the array!</p>
+<ul>
+<li>Ask the user what how many, for example, bananas, they want to buy, and update the cell for quanity using their input.<ul>
+<li>Can&#39;t remember how to ask the user? Here&#39;s a hint: <code>input(&quot;How many bananas do you want?&quot;)</code></li>
+<li>You can append this directly to the quantity cell, but that makes things more complicated to use, and difficult to read. Assign the input to a variable first, and then append the variable to the array.</li>
+</ul>
+</li>
+<li>Now let&#39;s work out a price. We can take the quanity that user wanted, and multiply it by the price in our original item array.<ul>
+<li>Can you do this without writing the value out again? Try and reference the price from the original array using it&#39;s index.</li>
+</ul>
+</li>
+<li>Multiply that price by the quantity, and assign the total cost to the price cell in our new array.</li>
+<li>Print your new item!</li>
+</ul>
+<p>Are you finding this task harder? Less code hints make it more difficult! Hopefully you&#39;re practicing your problem solving skills here.</p>
+<p>Here&#39;s some of the code, to make it easier:  </p>
+<pre><code class="lang-python">itemList = [[&quot;Bananas&quot;, 1.30, 20],
+            [&quot;Eggs&quot;,  2.00, 50],
+            [&quot;Milk&quot;, 2.10, 10]]
+
+item1 = []            
+item1.append(itemList[0][0])
+
+# Printing the array as a demonstration
+print(item1)
+
+# Asking the user for the amount
+quantity = input(&quot;How many bananas would you like?&quot;)
+item1.append(quantity)
+
+# The cost must be the amount times the price
+totalCost = quantity * itemList[0][1]
+item1.append(totalCost)
+
+print(item1)
+</code></pre>
+<p>Did you know why we consistently referenced cells from the <code>itemList</code> array? What happens if the price of bananas changes?</p>
+<p>By referencing to the original array, if anything does change, then we can just update it in the original array. This saves us having to look everywhere in case we have an old value that messes up our calculations.</p>
+<ul>
+<li>Change the quantity of the item in the <code>itemList</code> array accordingly. That means taking away our quantity from the array value.<ul>
+<li>We can use the <code>-=</code> operator, instead of saying <code>itemList[0][2] = itemList[0][2] - quantity</code>. It&#39;s neater!</li>
+</ul>
+</li>
+<li>Do the same for the customer&#39;s wallet, update the value to remove cost of the products.</li>
+</ul>
+<pre><code class="lang-python">itemList[0][2] -= quantity
+</code></pre>
+<p>Now that we understand how to add to arrays, we can start protecting the store from greedy customers!</p>
+<h2 id="task-4-deciding-what-to-do">Task 4: Deciding what to do</h2>
+<p>What happens if a customer wants to buy 1000 eggs, and we only have 20 in stock? We need to tell the customer that they can&#39;t buy this many, and only give them what we have. What if we run out of money in our wallet?</p>
+<p>There are lots of &quot;what if&quot; problems, which is why we&#39;ll use if statements to solve them.</p>
+<h3 id="task-list-">Task list:</h3>
+<ul>
+<li>Ask the user how much money they want to spend, and store it in a variable called <code>wallet</code>.<ul>
+<li>A variable is vital here, as we need to update the value of their wallet everytime they buy something.</li>
+</ul>
+</li>
+<li>Make a new, empty array called <code>basket</code><ul>
+<li>You could change these variable names, but it&#39;s good practice to call them something useful.</li>
+</ul>
+</li>
+<li>Copy across your original item list.</li>
+<li>For every item in your list, do something similar to the last task. I.e. Make a smaller array for it, ask the user how many they want, and work out how much it will cost, <strong>but don&#39;t add these values to the array yet.</strong></li>
+</ul>
+<p>Hopefully you&#39;ve come across if statements in the club before, they&#39;re super useful. Computer scientists call them program flow control structures, because they can control what our program does next (because they can skip stuff out, and do extra things, remember).</p>
+<h5 id="we-have-a-few-things-to-do-">We have a few things to do:</h5>
+<ul>
+<li>We need to check if the cost is greater than the user can afford.<ul>
+<li>If it is, then we need to work out how many they can afford, and tell them.</li>
+</ul>
+</li>
+<li>Check whether we, the shop, have enough stock.<ul>
+<li>If we don&#39;t then we can only sell what we have, so we need to work out home much that will cost.</li>
+</ul>
+</li>
+<li>If they have the money, and we have the stock, then we&#39;re ready to go and can add the items to their basket, and take the money from their wallet!</li>
+</ul>
+<p>When planning something that involves lots of if statements, it&#39;s often easiest to do it with pen and paper!</p>
+<p>Using what we know, let&#39;s start typing this out is pseudo code. That means it&#39;s not real code that a computer will be able to read, but it has the logic of a real program.</p>
+<p>By pseudo coding our app, we are <strong>breaking our problem down</strong>, so we know which tasks we need to tackle!</p>
+<p>Pseudo code:</p>
+<pre><code>if wallet has more money than the cost and requested less than the stock:
+    add item to basket
+    update stock
+    take money out of wallet
+    continue shopping
+else, if they just requested more than stock:
+    add all of the stock to basket
+    update stock
+    take money from wallet
+    continue shopping
+else (they must have less more than the cost):
+    divide the money by the cost (leaving the remainder aside) to work out the max they can afford
+    add the amount they can afford to the basket
+    take money out of wallet
+    update stock
+    continue shopping
+</code></pre><p>Wow that does look complicated!</p>
+<p>Well, we know the amount of money in their wallet, that&#39;s stored in the variable <code>wallet</code>, and we know the cost of the item, that&#39;s in the array <code>itemList</code> at index 0, 1, but will have to be multiplied by the <code>quantity</code> requested.</p>
+<p>We know the amount they requested, that should be stored in the variable <code>quantity</code>, and we know how much we have in stock. That should be stored in the <code>itemList</code>, at 0, 2.</p>
+<p>So we have everything we need!</p>
+<ul>
+<li>Store the single item price in a variable with an appropriate name.<ul>
+<li>We won&#39;t be needing to change the price in the original array from within our program, so using a secondary variable is alright!</li>
+</ul>
+</li>
+<li>Write a <strong>Boolean comparison</strong> of the value of the <code>wallet</code> is <strong>greater than</strong> the <code>quantity</code> times the price.</li>
+<li>Write a <strong>Boolean comparison</strong> of the <code>quantity</code> being less than the stock in the <code>itemList</code>.</li>
+</ul>
+<p>Hopefully you&#39;ve got something like:</p>
+<pre><code class="lang-python">singleItemCost = itemList[0][1]
+totalCost = quantity * singleItemCost
+
+wallet &gt; totalCost
+
+quantity &lt; itemList[0][2]
+</code></pre>
+<p>Now we can wrap these statements up into our if statement. We can use the <code>and</code> operator to check if both are true (at the same time).</p>
+<pre><code class="lang-python">totalCost = quantity * singleItemCost
+
+if wallet &gt; totalCost and quantity &lt; itemList[0][2]:
+    # Do stuff!
+</code></pre>
+<p>Now try and write the other comparisons like we did in the pseudo code! Remember the <code>elif</code> statement! And never forget your identation and colons with these statements, Python will never forgive you!</p>
+<p>Just put a comment in each indented space for now, the last part we will cover in the next task.</p>
+<h2 id="task-5-the-checkout-counter">Task 5: The checkout counter</h2>
+<p>Hopefully you&#39;ve managed to lace together the if statements, and you&#39;ve got something similar to:</p>
+<pre><code class="lang-python">singleItemCost = itemList[0][1]
+totalCost = quantity * singleItemCost
+
+if wallet &gt; totalCost and quantity &lt; itemList[0][2]:
+    # Do stuff!
+elif quantity &gt; itemList[0][2]:
+    # Can&#39;t give them what they want.
+else:
+    # They can&#39;t afford it!
+</code></pre>
+<p>Let&#39;s look back at the pseudo code for when everything goes well:</p>
+<blockquote>
+<pre><code>add item to basket,
+update stock,
+take money out of wallet,
+continue shopping
+</code></pre></blockquote>
+<p>We can just take what we wrote in task 3 for that! Copy it over!</p>
+<p>In the else if statement, we do pretty much the same, except we need to make the quantity that they&#39;re buying equal to our stock. That means we have to update the final price too!</p>
+<ul>
+<li>Try and implement that, there is code later but have a go alone!</li>
+</ul>
+<p>In the final else statement, we need to work out how many they can afford. We could divide their money by the cost of the item, but we&#39;d be left with a nasty remainder most of the time.</p>
+<p>But Python lets us work out the remainder when dividing! We use the <code>%</code> operator, instead of the <code>/</code>.</p>
+<ul>
+<li>Try printing the remainder of 7 divided by 3.<ul>
+<li><code>print(7 % 3)</code></li>
+</ul>
+</li>
+</ul>
+<p>If we take the remainder away from the customer&#39;s wallet value, and <em>then</em> divide the wallet by the price, we can work out amount they can buy!</p>
+<pre><code class="lang-python">remainder = wallet % singleItemCost
+quantity = (wallet - remainder) / singleItemCost
+totalCost = quantity * singleItemCost
+</code></pre>
+<ul>
+<li>Make a variable called <code>remainder</code>, and assign it the remainder of dividing the <code>wallet</code>, by the item cost.</li>
+<li>Assign the <code>quantity</code> variable, the value of dividing the wallet minus the remainder, by the cost.<ul>
+<li>Be careful! We don&#39;t want to take away the remainder from the variable <code>wallet</code>, like <code>wallet -= remainder</code>! We don&#39;t update the wallet yet or we&#39;ll have some angry shoppers!</li>
+</ul>
+</li>
+<li>Now just proceed as normal, working out the cost, taking that away from the wallet, updating the stock and adding the items to their reciept or basket!</li>
+</ul>
+<p>You&#39;ve done a lot this time, be proud! Don&#39;t worry if you got lost, just have a look at the code below and work out where you went wrong.</p>
+<h2 id="shopping-complete-">Shopping complete.</h2>
+<pre><code class="lang-python">itemList = [[&quot;Bananas&quot;, 1.30, 20],
+            [&quot;Eggs&quot;,  2.00, 50],
+            [&quot;Milk&quot;, 2.10, 10]]
+
+basket = []
+wallet = input(&quot;How much would you like to spend today?&quot;)
+
+# Make a new array to store this item&#39;s details
+item1 = []
+item1.append(itemList[0][0])   # Add the item name to the array
+
+# Asking the user for the amount
+quantity = input(&quot;How many bananas would you like?&quot;)
+
+totalCost = quantity * itemList[0][1]
+singleItemCost = itemList[0][1]
+# If everything is fine, then sell!
+if wallet &gt; () and quantity &lt; itemList[0][2]:
+     # Tell the user what&#39;s happening!
+    print(&quot;Purchase is all good.&quot;)
+
+    # Add the details to the reciept
+    item1.append(quantity)
+    item1.append(totalCost)
+
+    # Take the money and the stock
+    wallet -= totalCost
+    itemList[0][2] -= quantity
+
+# If we don&#39;t have enough
+elif quantity &gt; itemList[0][2]:
+    # Tell the user what&#39;s happening!
+    print(&quot;We don&#39;t have enough stock, we&#39;ll add what we&#39;ve got.&quot;)
+
+    # We have to update our values
+    quantity = itemList[0][2]
+    totalCost = quantity * singleItemCost
+
+    # Add the details to the reciept
+    item1.append(quantity)
+    item1.append(totalCost)
+
+    # Take the money and the stock
+    wallet -= totalCost
+    itemList[0][2] -= quantity
+
+# Else, they can&#39;t afford it!
+else:
+    # Tell the user what&#39;s happening!
+    print(&quot;You can&#39;t afford all of these items!&quot;)
+
+    # Doing perfect division
+    remainder = wallet % singleItemCost
+    quantity = (wallet - remainder) / singleItemCost
+    totalCost = quantity * singleItemCost
+
+    # Add the details to the reciept
+    item1.append(quantity)
+    item1.append(totalCost)
+
+    # Take the money and the stock
+    wallet -= totalCost
+    itemList[0][2] -= quantity
+</code></pre>
+<h3 id="final-tasks-">Final tasks:</h3>
+<ul>
+<li>Append your item to the basket when you&#39;re ready!<ul>
+<li>Think about where this could go. Try add it to the basket just once in the program!</li>
+</ul>
+</li>
+<li>Copy and paste the code, and update it for each item.<ul>
+<li>If you know how to use <code>FOR</code> loops, then use them! It will be far easier to look at, and a lot less code!</li>
+</ul>
+</li>
+<li>Print the user&#39;s reciept (that should just be the <code>basket</code> at the end, and leave them a nice message.</li>
+</ul>
+<p>Hopefully you&#39;ll just be adding:</p>
+<pre><code class="lang-python"># Adding the item to the basket
+basket.append(item1)
+basket.append(item2)
+basket.append(item3)
+
+# Printing the reciept
+print(basket)
+</code></pre>
+<p>We&#39;ve managed to use everything that we know about asafpjsdklgsa...</p>
+<h2 id="challenge-task">Challenge Task</h2>
+<ol>
+<li>Print the total cost of the shop when you print the reciept.</li>
+<li>What if the user decides, last minute, that they don&#39;t want some of their items! Update the program to remove items from their basket, and the cost from their reciept if the user doesn&#39;t want an item anymore. Complicated but you should have all the skills!</li>
+</ol>
+<p>You can always take your code home to work on, and if your teacher&#39;s nice then you might even get a prize for going the extra mile!</p>
+
+
+</div>
+</body>
+</html>

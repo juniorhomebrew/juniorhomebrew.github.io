@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,400i,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <meta charset="UTF-8" />
+    <meta name="pinterest" content="nopin" />
+    <title>Weather advice</title>
+    <meta name="description" content="">
+</head>
+<body>
+<div class="main-container">
+    <header>
+        <a href="/"><img src="/assets/images/icon-white.png" class="mini-logo"/></a>
+    </header>
+    <h1>Weather advice</h1>
+    <h5 id="functions">FUNCTIONS</h5>
+<p> In this lesson we will learn what a function is, how use a function and also how to create one. </p>
+<p><img src="images/weather.gif" alt="Teletext Weather"></p>
+<h2 id="what-is-a-function-">What is a function?</h2>
+<p>A function is a block of code which performs a desired task for example some code that can calculate the amount of calories burnt on a run.</p>
+<h3 id="who-cares-">Who cares?</h3>
+<p>Firstly once the function has been created it can be called anywhere in the program. This means that time will be saved when you need to use the function as you will not have to write out the entire code again but can just simply call the function. It also makes your code more efficient and easier to read as you only need to write one line of code to use a function.</p>
+<h2 id="task-1-create-your-first-function">Task 1: Create your first function</h2>
+<p>Here&#39;s how to create (or <em>define</em>) your first function!</p>
+<ul>
+<li>Firstly you need to type <code>def</code> followed by the name of the function. e.g. <code>def calorieFunction():</code></li>
+<li>We put the brackets at the end as in here we place our parameters this can be inputs or arguments needed for the function for the work.</li>
+<li>Next we add the colons in order to tell the computer that we have created a function.</li>
+<li>Below this we type the code we wish the computer to execute, but make sure this code is indented otherwise the computer will not know to execute that code.</li>
+</ul>
+<p>Now we have created the function lets see how we call one:</p>
+<ul>
+<li>Write the function name followed by two brackets again containing the needed parameters or arguments. e.g. <code>calorieFunction(workoutType)</code> <ul>
+<li>This line of code will call the function along with the variable &quot;workoutType&quot; which would be needed in order for the function to work.</li>
+</ul>
+</li>
+</ul>
+<p>Type the code below and run it and see what error you get:</p>
+<pre><code class="lang-python"># Ask the user their age in years and store in the variable &quot;age&quot;
+age = int(input(&quot;How old are you?&quot;)) 
+
+# Create a function called &quot;ageSeconds&quot;
+def ageSeconds(): 
+    # Create a new variable for your age in seconds
+    ageSeconds = age * 24 * 60 * 60 * 365
+
+    # Prints the user&#39;s age in seconds
+    print(ageSeconds)
+
+ageSeconds() # Call the function
+</code></pre>
+<h3 id="the-error">The error</h3>
+<p>In order for the function to work we need the required parameters to be included when we define the function. Therefore we need to put the variable &quot;age&quot; in both brackets for the function to be able to use this data.</p>
+<p><strong>So lets try again:</strong></p>
+<pre><code class="lang-python"># Ask the user their age in years and store in the variable &quot;age&quot;
+age = int(input(&quot;How old are you?&quot;)) 
+
+# Create a function called &quot;ageSeconds&quot;, passing a parameter, &#39;age&#39;
+def ageSeconds(age): 
+    # Create a new variable for your age in seconds
+    ageSeconds = age * 24 * 60 * 60 * 365
+
+    # Prints the user&#39;s age in seconds
+    print(ageSeconds)
+
+ageSeconds(age) # Call the function
+</code></pre>
+<h3 id="so-what-s-going-on-">So what&#39;s going on?</h3>
+<ul>
+<li>On the first line we are asking the user to input their age, we then save this value as an integer to the variable name &quot;age&quot;.</li>
+<li>Next we have created the function and called it &quot;ageSeconds&quot;, on this line of code we have also told the function what variable is going to be used so that the computer knows where to obtain the information.</li>
+<li>After this we created a new variable called &quot;ageSeconds&quot; which is the users age in seconds, we have done this by using the variable containing the age and timesed it by 60 then by 60 then by 25 and then by 365.</li>
+<li>We then told the computer to print the users age in seconds on the screen so they are able to see it.</li>
+<li>The final line of code allows this function to be executed as functions only start to work when they are told to do so therefore we have to tell the computer to do so.</li>
+</ul>
+<p>We now know how a function works and the basics as how to create and use them.</p>
+<h2 id="task-2-what-to-wear-with-different-weather">Task 2: What to wear with different weather</h2>
+<p>In this task you will create a variety of functions that will be executed depending on different criteria. From this task we will see that you can create a function and then use this throughout the program which will save time writing out each piece of code again and again.</p>
+<pre><code class="lang-python">weather = input(&quot;What&#39;s the weather today? (sunny/rainy/cold/hot/sunny+cold/rainy+hot)&quot;)
+def sunny():
+  print(&quot;Make sure you wear sun cream today!&quot;)
+
+def rainy():
+  print(&quot;Bring an umbrella with you today.&quot;)
+
+def cold():
+  print(&quot;Make sure you wrap up and keep warm&quot;)
+
+def hot():
+  print(&quot;You can wear shirts and t-shirt today&quot;)
+
+if weather == &quot;sunny&quot;:
+  sunny()
+if weather == &quot;rainy&quot;:
+  rainy()
+if weather == &quot;cold&quot;:
+  cold()
+if weather == &quot;hot&quot;:
+  hot()
+if weather == &quot;sunny+cold&quot;:
+  sunny()
+  cold()
+if weather == &quot;rainy+hot&quot;:
+  rainy()
+  hot()
+</code></pre>
+<h3 id="so-what-s-going-on-">So what&#39;s going on?</h3>
+<p>on the first line we are inputting today&#39;s weather by typing one of the words provided by the computer for example &quot;sunny&quot;. After this we define all of our functions for all the different weather types. After this we make our criteria, the computer checks what the user inputs and calls a function depending on that input. For example if the user inputs sunny+cold then the functions sunny and cold are called this is shown below in the block of code.</p>
+<pre><code class="lang-python">if weather == &quot;sunny+cold&quot;:
+    sunny()
+    cold()
+</code></pre>
+<h2 id="and-we-re-done-">And we&#39;re done!</h2>
+<p>You now understand what a function is, how to create one and also how to use it. We have seen examples of its uses. We have a variety of programming techniques, if statements, functions, user input and also printing.</p>
+
+
+</div>
+</body>
+</html>

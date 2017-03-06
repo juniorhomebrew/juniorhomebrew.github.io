@@ -1,0 +1,58 @@
+<h1 id="hi-pi-">Hi, Pi!</h1>
+<h3 id="teacher-s-lesson-plan">Teacher&#39;s lesson plan</h3>
+<p>This is a lesson guide, intended for teachers to use when introducing the Raspberry Pi to students.</p>
+<p>We&#39;ll be introducing them to the <strong>command line</strong>, with a few basic commands to help them navigate it (but we won&#39;t be dwelling on this); more importantly, we will be introducing them to the <strong>graphical user interface (GUI)</strong>, which is where we expect that they will spend most of their time developing code and hacking bits together. </p>
+<h2 id="task-0-don-t-break-anything-">Task 0: Don&#39;t break anything!</h2>
+<p>As soon as everyone has their Raspberry Pis, they&#39;ll be sure to be inspecting them, and poking about. But remember, the board itself has exposed electronics! If that doesn&#39;t ring alarm bells (with kids involved), then think of <strong>static electricity!</strong> </p>
+<p>If a potential difference exists between the students and the Pi, then touching some components can cause tiny sparks. These may not be fire hazards or at all harmful for the students, but can damage the components so that they have a reduced lifetime (meaning you&#39;ll have to throw them away <em>a lot</em> sooner than you&#39;d hope). </p>
+<p><strong>Basically, just warn them not to touch it</strong> – don&#39;t bother with the technicalities, and buy a case instead. A simple warning will do!</p>
+<h2 id="task-1-the-hardware">Task 1: The Hardware</h2>
+<p>After the prodding around is done, we can briefly explain what as the stuff poking out of the board really is (that main parts anyway). </p>
+<p><strong>USB Ports</strong> – these are the big blocks (2 by 2 if you&#39;re using the A+, B+, 2 or 3, and 1 by 2 if you&#39;re using the B or A), these let us plug things like keyboards and mice and printers and general things in. Get everyone to plug in a keyboard and mouse (and wifi dongle if you need to). </p>
+<p><strong>HDMI Port</strong> – just one wide port on the side, lets us connect the device to a screen so that we can see what&#39;s going on. It stands for &quot;high definition multimedia interface&quot;. Plug these into the screen (be careful not to have the power plugged in too, in case of dodgey cables). (Note: if you&#39;re working in a school, you&#39;ve probably got an HDMI to something-else cable, so make sure that students know which ones go where [they will]). Connect up the screen!</p>
+<p><strong>Ethernet Port</strong> – a wired internet connection. You probably won&#39;t use these, thanks to the proxies that all schools have. It&#39;s faster than wifi usually, and is built in (unlike wifi dongles, which are plugged in, unless you&#39;re using the 3). </p>
+<p><strong>GPIO Pins</strong> – these are the general purpose, input, output pins which let us interface from our Pi, out to the real world. We&#39;ll be using these a lot, and this is where you&#39;re most likely to damage your Pi by touching all of the pins at the same time (3V and 5V pins are live when the Pi is powered). </p>
+<p><strong>Slots</strong> – there are multiple ribbon band connector slots on the surface of the Pi that you might not notice, for camera and the likes. </p>
+<p><strong>SD Card Reader</strong> – at the bottom of the Pi, an SD card sits which runs the whole system. Taking this out whilst the system is still running will cause the whole system to crash, potentially leaving you with a corrupt SD card, which needs re-imaging. Everyone should know not to play with this when the Pi is on. </p>
+<p><strong>Power</strong> – a micro USB connection gives the Raspberry Pi its life. That means we can use a phone charger (providing it has the right voltage rating). Connect up the Pi and watch the rainbow colours and green text on the screen!</p>
+<h2 id="task-2-the-matrix">Task 2: The matrix</h2>
+<p>At this point, lots of the kids think that they are hackers. Hackers aren&#39;t all evil, but these kids definitely aren&#39;t them. We&#39;ll get everyone used to the Pi (which <em>hopefully</em> you&#39;ve set up once, and connected to the internet, and then flashed to all of the SD cards to save time). </p>
+<p>Please don&#39;t leave them to set up the raspi-config screen!</p>
+<h3 id="login">Login</h3>
+<p>Username: pi
+Password: raspberry</p>
+<p>No spaces! This is <strong>always</strong> the default password! Don&#39;t bother changing it either.</p>
+<h3 id="ls">ls</h3>
+<p>We&#39;ve made it the command line interface, logged in and now what? It&#39;s not as neat as a GUI, so we have to manually look around. Start with listing all of the files in the directory (folder). </p>
+<pre><code class="lang-bash">ls
+</code></pre>
+<p>Now we can see the files! Okay that was fine, but nows lets move ourselves into a folder. </p>
+<h3 id="cd">cd</h3>
+<p>Change directory using cd, and then the folder name. Try documents.</p>
+<pre><code class="lang-bash">cd Documents
+</code></pre>
+<p>Changing back to the folder before is as simple as <code>cd ..</code>, which goes to the parent folder.</p>
+<h3 id="nano">nano</h3>
+<p>How do we write our code? Most easily, and usually we write in a text file. In the terminal, the easiest text editor is <code>nano</code></p>
+<p>Open a blank file with:</p>
+<pre><code class="lang-bash">nano
+</code></pre>
+<p>To open an existing file, e.g. <code>myfile.txt</code>:</p>
+<pre><code class="lang-bash">nano myfile.txt
+</code></pre>
+<p>So save the file and exit, press control and x, and then enter to save the existing file, or enter a filename and then save. </p>
+<h3 id="python3">python3</h3>
+<p>Running Python code on the command line is simple, using:</p>
+<pre><code class="lang-bash">python3 myProgram.py
+</code></pre>
+<p>Remember that Python files should end with <code>.py</code> (and that we&#39;re using python3, for python 2.7, take out the 3). </p>
+<p>We can also write code straight into the interpreter, by just typing <code>python3</code>, but usually we don&#39;t want to do this. </p>
+<h3 id="pip3-etc-">pip3 etc.</h3>
+<p>If you think that your class are apted enough to know about packages and libraries then talk about pip and pip3, but we think this is too much for our year 7s!</p>
+<h3 id="startx">startx</h3>
+<p>This is all very slow for the kids, so lets launch the GUI (they&#39;ll be relieved), by typing:</p>
+<pre><code class="lang-bash">startx
+</code></pre>
+<p>Finally!</p>
+<h2 id="task-3-idle3-and-other-apps">Task 3: IDLE3 and other apps</h2>
+<h2 id="task-4-shutting-down-properly">Task 4: Shutting down properly</h2>

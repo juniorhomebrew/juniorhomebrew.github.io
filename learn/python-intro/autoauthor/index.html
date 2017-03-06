@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,400i,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <meta charset="UTF-8" />
+    <meta name="pinterest" content="nopin" />
+    <title>Auto-Author</title>
+    <meta name="description" content="">
+</head>
+<body>
+<div class="main-container">
+    <header>
+        <a href="/"><img src="/assets/images/icon-white.png" class="mini-logo"/></a>
+    </header>
+    <h1>Auto-Author</h1>
+    <h5 id="variables-inputs-and-outputs">VARIABLES, INPUTS and OUTPUTS</h5>
+<p>Writing stories can take a long time! What if we started off with a story, and then just had to put in the details? If you&#39;ve every played consequences, this is very similar: we ask the user for the name, activity etc. and then we take what they gave us, and make it into a beautiful, and often ridiculous story!</p>
+<h2 id="task-1-showing-some-text-on-the-screen">Task 1: Showing some text on the screen</h2>
+<p>There&#39;s no point in making a story if no one can see it, so we need a way to show everyone what&#39;s going on. In computer science, we call this an <strong>output</strong>. That&#39;s because the computer program <strong>outputs</strong> something, for the user to see. This task will should you how it&#39;s done.</p>
+<h4 id="step-list-">Step List:</h4>
+<ul>
+<li>Get your code editor open and ready!</li>
+<li>Start the first line right at the beginning of the first line (not spaces or indents before the text).<ul>
+<li>Since we&#39;re using Python, we have to do this otherwise the program will get confused. Spaces and indents at the beginning of a line can only be used for some cases, but we&#39;ll get onto that later.</li>
+</ul>
+</li>
+<li>Type: <code>print(&quot;Hello World!&quot;)</code>.<ul>
+<li>Make sure that the first bracket is touching the word <code>print</code>, otherwise it won&#39;t work!</li>
+<li>Don&#39;t forget to use apostrophies or speech marks around &quot;Hello World&quot;. We have to use them because <code>Hello World!</code> is a sentence, rather than a variable, which is what we&#39;ll get onto in a minute.</li>
+</ul>
+</li>
+<li>Run your program!<ul>
+<li>What did you see? If everything went well, the sentence &quot;Hello World!&quot; should be printed (or outputted) to you!</li>
+<li>Your code should look like this:</li>
+</ul>
+</li>
+</ul>
+<pre><code>print(&quot;Hello World!&quot;)
+</code></pre><ul>
+<li>This doesn&#39;t look much like a story though. Try changing the text to make it say something longer and more interesting!<ul>
+<li>For longer bits of text, programmers usually use triple apostrophies. This makes sure that nothing can go wrong if your text runs over multiple lines.</li>
+</ul>
+</li>
+</ul>
+<p>Here&#39;s my example (I even added a pretty border around the outside!):</p>
+<pre><code class="lang-python">print(&#39;&#39;&#39;
+        * -------------------------------------------------------*
+        Most people think that the cat is an unintelligent animal,
+        fond of ease, and caring little for anything but mice and
+        milk. But a cat has really more character than most human
+        beings, and gets a great deal more satisfaction out of
+        life. Of all the animal kingdom, the cat has the most
+        many-sided character.
+        * -------------------------------------------------------*
+&#39;&#39;&#39;)
+</code></pre>
+<h2 id="task-2-remembering-data">Task 2: Remembering data</h2>
+<p>When we ask the user for things later, we need to remember what they said! Computers don&#39;t do this automatically, we need to tell them to remember things. For this, we will use something called a variable.</p>
+<h4 id="step-list-">Step List:</h4>
+<ul>
+<li>Make a variable with a text value, using <code>word = &quot;hotdog&quot;</code><ul>
+<li>A variable is a way of storing a value. In this case, we&#39;ll store a string value.</li>
+<li>Using the equals sign <strong>assigns</strong> a value to the variable. This is done so that we can <strong>refer</strong> to it later.</li>
+<li>You should read it as &quot;word refers to hotdog&quot;. That&#39;s how we assign things.</li>
+<li>A string is a series of characters, like a word, letter or sentence. We need speech marks around the string to tell the computer that it&#39;s a string.</li>
+</ul>
+</li>
+<li><code>name = &quot;Jack&quot;</code><ul>
+<li>This is how we give a variable a value.</li>
+<li>In front of the equals, there is the variable name. This doesn&#39;t need speech marks.<ul>
+<li>Variable names must start with a letter, and can only include the alphabet, numbers and underscores.</li>
+</ul>
+</li>
+<li>The equals says that the left is the same as the value of the right. This way, everytime we say <code>name</code> in the rest of the program, it&#39;s the same as saying <code>&quot;Jack&quot;</code>.</li>
+</ul>
+</li>
+<li>Try making a variable called <code>surname</code>, and give it your last name.</li>
+<li>Now try printing the variable.<ul>
+<li>Remember that we don&#39;t need speech marks!</li>
+<li>See what it printed out!</li>
+</ul>
+</li>
+</ul>
+<h4 id="got-lost-here-s-the-code-">Got lost? Here&#39;s the code.</h4>
+<pre><code class="lang-python">name = &quot;Jack&quot;
+surname = &quot;Homebrew&quot;
+
+print(surname)
+</code></pre>
+<p>What&#39;s the point in using variables? The clue is in the name. We need to use the name in a hundred different places in a long program, but if we want to change it, then we will have to go to one hundred different places to do so.</p>
+<p>With a variable, <strong>we just have to change the value in one place</strong>, and then everywhere else the value changes. We can vary what the value is. We can also change the value of it half way through a program.</p>
+<h2 id="task-3-ask-the-user">Task 3: Ask the user</h2>
+<!-- Break into paragraphs -->
+<p>To let the user customise the story, they need to be asked to give the parts we need. Let&#39;s ask them some questions, and remember what they say so we can use them later.</p>
+<h4 id="step-list-">Step List:</h4>
+<ul>
+<li>Make a new variable with a text value.<ul>
+<li>Same as before. For example: <code>job = &quot;plumber&quot;</code></li>
+</ul>
+</li>
+<li>Change that variable&#39;s value (the part of the right), to be <code>input()</code>.<ul>
+<li>It&#39;s very important to have the brackets touching the word input, otherwise the code won&#39;t work!</li>
+<li>When the user answers in the box, they don&#39;t need to put speech marks around what they type. The computer does this automatically when you use <code>input()</code>.</li>
+</ul>
+</li>
+<li>Run this code.<ul>
+<li>The program should come up with a little input box.</li>
+</ul>
+</li>
+<li>Change your code to print the variable.</li>
+</ul>
+<p>Your code should look like:</p>
+<pre><code class="lang-python">job = input()
+
+print(job)
+</code></pre>
+<p>The user doesn&#39;t know what to input unless they read the code! Let&#39;s make the pop-up box ask the user a question.</p>
+<ul>
+<li>Put your question inside the brackets of <code>input()</code>, but remember the speech marks!<ul>
+<li>We still need speech marks because we are using words, not variables in our question.</li>
+</ul>
+</li>
+<li>We can print multiple things in one go by using a comma in the print function.<ul>
+<li>The comma can&#39;t be in speech marks! We are not using it as a comma, but as a separator.</li>
+</ul>
+</li>
+<li>Try printing <code>&quot;Your job is&quot;</code> before the <code>job</code> variable is printed.</li>
+</ul>
+<h4 id="got-lost-here-s-the-code-">Got lost? Here&#39;s the code.</h4>
+<pre><code class="lang-python">job = input(&quot;What is your job?&quot;)
+
+print(&quot;Your job is&quot;, job)
+</code></pre>
+<p>Inputs allow the user to interact with the program. We use variables with them, so that the user can change what the program does. If we didn&#39;t use variables, the user would have to go into the code and modify it to print their name.</p>
+<p>Using a variable means that we only have to ask the user once, and the values are changed everywhere!</p>
+<h2 id="task-4-putting-the-story-together">Task 4: Putting the story together</h2>
+<p>Now we&#39;ve learnt all the skills to make out automated story creator. We&#39;ll guide you through, step by step, for making your story.</p>
+<h4 id="step-list-">Step List:</h4>
+<ul>
+<li>Come up with a great story, and leave some spots where the user can change the values. Maybe plan this part out on paper!</li>
+</ul>
+<p>Here&#39;s a not so interesting story that I wrote up quickly:</p>
+<pre><code>person1 and person1 met at place1.
+person1 said speech1 to person2, person2 replied speech2.
+Then they went to place2, and did activity1.
+
+The day ended with activity2, and person1 and person2 final.
+</code></pre><p>With this plan, I can see all the variables that I will need to use easily!</p>
+<ul>
+<li>Let&#39;s ask the user for each of your variables.<ul>
+<li>Add the question in the brackets so that the user knows what to enter!</li>
+</ul>
+</li>
+<li>Now print each variable where it should be, with the story in between.<ul>
+<li>This should be using commas, like we just did!</li>
+</ul>
+</li>
+</ul>
+<h4 id="got-lost-here-s-the-code-">Got lost? Here&#39;s the code.</h4>
+<pre><code class="lang-python"># We ask the user all of the details
+person1 = input(&quot;What is person 1 called?&quot;)
+person2 = input(&quot;What is person 2 called?&quot;)
+place1 = input(&quot;Where did they meet?&quot;)
+
+speech1 = input(&quot;What did person 1 say?&quot;)
+speech2 = input(&quot;What did person 2 reply?&quot;)
+
+place2 = input(&quot;Where did they go after that?&quot;)
+activity1 = input(&quot;What did they do?&quot;)
+
+activity2 = input(&quot;How did the day end?&quot;)
+final = input(&quot;What happened at the end of the day?&quot;)
+
+
+# Now we&#39;re outputting the story
+print(person1, &quot;and&quot;, person2, &quot;met at&quot;, place1, &quot;.&quot;)
+print(person1, &quot;said&quot;, speech1, &quot;to&quot;, person2, &quot;.&quot;, person2, &quot;replied&quot;, speech2 &quot;.&quot;)
+print(&quot;Then they went to&quot;, place2, &quot;and did&quot;, activity1 &quot;.&quot;)
+print(&quot;The day ended with&quot;, activity2, &quot;and&quot;, person1, &quot;and&quot;, person2, final &quot;.&quot;)
+</code></pre>
+<h5 id="-what-"># What?</h5>
+<p>Are you wondering why some lines have normal english in them, and start with a <code>#</code>? These are called comments. Once we put a <code>#</code> on a line, everything after that line is ignored by the computer. We can write whatever we like here!</p>
+<p>Comments are used to remind programmers what is going on in the code. It helps to keep things easy to read, and helps other programmers understand what the does if they are lost or confused.</p>
+<p>Also note that blank lines are completely ignored by the interpreter (the computer that reads the code).</p>
+<h2 id="challenge-task">Challenge Task</h2>
+<p>Let&#39;s make the questions a bit more personal. Try and figure out how we can ask the user &quot;What did Steve say?&quot;, the user entered <code>person1</code> as <code>&quot;Steve&quot;</code>.</p>
+
+
+</div>
+</body>
+</html>

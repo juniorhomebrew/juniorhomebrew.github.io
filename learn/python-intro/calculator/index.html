@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,400i,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <meta charset="UTF-8" />
+    <meta name="pinterest" content="nopin" />
+    <title>Calculator</title>
+    <meta name="description" content="">
+</head>
+<body>
+<div class="main-container">
+    <header>
+        <a href="/"><img src="/assets/images/icon-white.png" class="mini-logo"/></a>
+    </header>
+    <h1>Calculator</h1>
+    <h5 id="if-statements-variables-inputs-outputs-boolean">IF STATEMENTS, VARIABLES, INPUTS/OUTPUTS, BOOLEAN</h5>
+<p>Do you ever get stuck on a maths question and can&#39;t find your calculator?</p>
+<p>Well, those days are over! Today, you are going to make a program that does difficult calculations for you! You&#39;ll input two numbers and tell the computer what you want to do with them (e.g. add them up or multiply them together).</p>
+<h2 id="task-1-asking-for-the-numbers">Task 1: Asking for the numbers</h2>
+<p>First of all, we need to be able to give the computer these numbers, to remember for later. In order to do this we must use <strong>inputs</strong> and <strong>variables</strong>. We use <strong>inputs</strong> so we can put the numbers we choose into the program and we use <strong>variables</strong> so we can save  them within the program, so they can be used later on. Just follow the steps below and you will be well on your way to creating your own calculator!</p>
+<h4 id="step-list-">Step List:</h4>
+<ul>
+<li>Open up your code editor of choice (e.g. Portable Python).</li>
+<li>Type: <code>number1 = int(input(&quot;What is the first number?&quot;))</code><ul>
+<li>Remember to put the whole <code>input()</code> <strong>function</strong> inside the <code>int()</code> brackets as they tell the computer that the numbers you are inputting are actually numbers, not words!</li>
+<li>Don&#39;t forget to use speech marks around <code>&quot;What is the first number?&quot;</code> as they tell the computer that the question you&#39;ve written is made up of words, or in coding  terms, <strong>strings</strong>!</li>
+<li>Make sure that there is no space between <code>input</code> and the bracket.</li>
+</ul>
+</li>
+<li>Type: <code>number2 = int(input(&quot;What is the second number?&quot;))</code><ul>
+<li>Make sure that you close all brackets otherwise the code won&#39;t work!</li>
+</ul>
+</li>
+<li><p>Your code should look like this:</p>
+<pre><code class="lang-python">number1 = int(input(&quot;What is the first number?&quot;))
+number2 = int(input(&quot;What is the second number?&quot;))
+</code></pre>
+</li>
+<li><p>Run the code!</p>
+</li>
+</ul>
+<p>When you run the program, it should ask you to input the first two numbers. If the program doesn&#39;t do this, something&#39;s wrong! Look over your code and make sure that it matches the code in the steps above.</p>
+<h2 id="task-2-showing-the-numbers">Task 2: Showing the numbers</h2>
+<p>Now that the user has inputted the two numbers they want to use, we are now going to simply output these numbers.</p>
+<h4 id="step-list-">Step List:</h4>
+<ul>
+<li>Open the code you made in <strong>Task 1</strong>.</li>
+<li>Below this code, type: <code>print(&quot;Number 1: &quot;, number1)</code><ul>
+<li>Don&#39;t forget to use the comma as it tells the computer to separate the <strong>string</strong> <code>&quot;Number 1: &quot;</code> and the <strong>variable</strong> <code>number1</code>.</li>
+<li>Make sure that there is a space between the colon and the second speech mark <code>: &quot;</code>.</li>
+</ul>
+</li>
+<li>On a new line, Type: <code>print(&quot;Number 2: &quot;, number2)</code></li>
+</ul>
+<p>Your code should now look like this:</p>
+<pre><code class="lang-python">number1 = int(input(&quot;What is the first number?&quot;))
+number2 = int(input(&quot;What is the second number?&quot;))
+print(&quot;Number 1: &quot;, number1)
+print(&quot;Number 2: &quot;, number2)
+</code></pre>
+<ul>
+<li>Run the code!</li>
+</ul>
+<p>When you run the code and input the two numbers, the program should then output the two numbers you inputted.</p>
+<h2 id="task-3-number-crunching">Task 3: Number crunching</h2>
+<p>Now that we have given the program the numbers we want, it&#39;s time for us to write the code code so the program can do calculations using these numbers. We are going to do this using <strong>if statements</strong>.</p>
+<p>These are blocks of code that are run only <strong>if</strong> a condition is met, that means if the statement I make is <code>True</code>. For example, if I wanted to check <strong>if</strong> number 1 was greater than number 2, I would use an <strong>if statement</strong> containing a <strong>Boolean operator</strong>.</p>
+<p>Boolean&#39;s a pretty cool word, in case you didn&#39;t notice, and just means making a comparison in statements, that can only have the value <code>True</code> or <code>False</code>. In Python we use things like <strong>equals</strong> <code>==</code>, <strong>greater than</strong> <code>&gt;</code> or <strong>less than</strong> <code>&lt;</code>. The steps below will show you how to use all of these programming techniques to create your calculator.</p>
+<p>Boolean logic was invented by, mathematician, George Boole. Here&#39;s a picture of him for your entertainment.</p>
+<p><img src="images/boole.jpg" alt="Boole looking cool"></p>
+<!-- Steps and reasons for doing it -->
+<h4 id="step-list-">Step List:</h4>
+<ul>
+<li>Open the code you were working on in <strong>Tasks 1 and 2</strong>.<ul>
+<li>Don&#39;t forget to frequently save your work otherwise it&#39;ll be gone forever!</li>
+</ul>
+</li>
+<li>Type: <code>command = input(&quot;What do you want to do with these numbers?&quot;)</code></li>
+<li>On a new line, type:</li>
+</ul>
+<pre><code class="lang-python">if command == &quot;add&quot;:
+    print(number1+number2)
+</code></pre>
+<p>Remember that you must have a colon on the end of the first line so that the computer knows that it is an <strong>if statement</strong>!</p>
+<ul>
+<li>Now let&#39;s make the computer recognise when to multiply, write something similar to before, but changing the <strong>IF statement</strong> to check whether the user entered <code>multiply</code>.</li>
+</ul>
+<pre><code class="lang-python">if command == &quot;multiply&quot;:
+    print(number1*number2)
+</code></pre>
+<p>Make sure that there is an indentation in the second line so that the computer knows that the second line is part of the <strong>if statement</strong>!</p>
+<ul>
+<li>Run the code!<ul>
+<li>Try inputting &quot;multiply&quot; or &quot;add&quot; to see if the computer can correctly add and multiply the numbers!</li>
+</ul>
+</li>
+</ul>
+<h2 id="all-the-code-">All the code!</h2>
+<p>This is what your final code should look like, the bits after the &#39;#&#39; are comments and show you what the code is doing. You don&#39;t have to use them in your code but it&#39;s super helpful when checking through!</p>
+<pre><code class="lang-python"># Converts the user&#39;s input to an integer, and assigns to a variable
+number1 = int(input(&quot;What is the first number?&quot;))
+number2 = int(input(&quot;What is the second number?&quot;))
+​
+# Prints the numbers
+print(&quot;Number 1: &quot;, number1)
+print(&quot;Number 2: &quot;, number2)
+​
+# Assigns the user&#39;s input to a variable
+command = input(&quot;What do you want to do with these numbers?&quot;)
+
+# Check if the user entered the command &#39;add&#39;
+# It will continue if the the statement below is True
+if command == &#39;add&#39;:
+    # Prints the sum of the two numbers
+    print(number1 + number2)
+
+# Check if the user entered the command &#39;multiply&#39;
+if command == &#39;multiply&#39;:
+    # Prints the product of the two numbers
+    print(number1 * number2)
+</code></pre>
+<p>Congratulations! You&#39;ve created your very own calculator using python! If you&#39;re still eager to code more, look at the challenge task!</p>
+<h2 id="challenge-task-">Challenge Task:</h2>
+<p>If you are reading this you have probably finished all of the tasks and you want a challenge. Well, you&#39;ve come to the right place! The challenge task is to see if you can get your calculator to divide, subtract and even square!</p>
+<ul>
+<li>HINT: <code>/</code> is divide, <code>-</code> is subtract and <code>**2</code> means square.</li>
+</ul>
+
+
+</div>
+</body>
+</html>

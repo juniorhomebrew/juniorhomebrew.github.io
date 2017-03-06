@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,400i,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <meta charset="UTF-8" />
+    <meta name="pinterest" content="nopin" />
+    <title>Morse Translator</title>
+    <meta name="description" content="">
+</head>
+<body>
+<div class="main-container">
+    <header>
+        <a href="/"><img src="/assets/images/icon-white.png" class="mini-logo"/></a>
+    </header>
+    <h1>Morse Translator</h1>
+    <h5 id="dictionaries-for-loops-string-manipulation">DICTIONARIES, FOR LOOPS &amp; STRING MANIPULATION</h5>
+<p>What&#39;s Morse code? It&#39;s a method of sending text information as dots and dashes. It was used to send messages across huge distances, rather than sending letters (this was way before the internet, and even before your parents were born).</p>
+<p>Since it&#39;s not used so often today, we don&#39;t really need to learn it. But what if we make an app that translates normal text to morse code? You could use this to send secret messages to your friends across a class room or whatever else you like!</p>
+<p>Just to inform you, here&#39;s the translation of every letter to Morse code:</p>
+<p><img src="images/morse.png" alt="morse code image"></p>
+<h2 id="task-1-making-the-computer-remember-morse-code">Task 1: Making the computer remember Morse code</h2>
+<p>How can we make the computer store the Morse symbol (the dot and dash combination) of each letter?</p>
+<p>You might be thinking about making a long array, with all the Morse symbols, or maybe using IF statements. These are good ideas, but we can make it easier than that!</p>
+<p>What we need is a kind of dictionary, a reference when we can ask what the character&#39;s Morse symbol is, and translate back again. Hmm... If only Python had a dictionary type array!</p>
+<p>Well we&#39;re in luck! Python has just that, it&#39;s called a <strong>dictionary</strong>, conveniently. We can make a type of <strong>list</strong> or <strong>array</strong>, where we have two values per space. We have a <strong>key</strong> and a <strong>value</strong>.</p>
+<p>Here&#39;s what it looks like:</p>
+<pre><code class="lang-python">firstDictionary = { &quot;name&quot;: &quot;Jack&quot;, &quot;surname&quot;: &quot;Homebrew&quot; }
+</code></pre>
+<p>Do you remember how arrays work? We have an <strong>index</strong>, and a value. The <strong>index</strong> is a <strong>key</strong>, just like the key in a dictionary! Take note that a dictionary uses curly brackets, unlike the array or list, which uses square brackets.</p>
+<blockquote>
+<p>Remember it&#39;s a <em>key</em>, because it <em>unlocks</em> a value.</p>
+</blockquote>
+<p>You can think of each section separated by a comma as a cell again. These cells are split into two halves; one (on the left), is your key.</p>
+<p><strong>NOTE</strong>: Keys can only be numbers or strings, or tuples!</p>
+<p>This means that we can <strong>refer</strong> to the <strong>value</strong>, by using the key. In an array we might say <code>myArray[1]</code>, and similarly, with a dictionary we use our key inside the square brackets like <code>myDict[&quot;name&quot;]</code> (this will print <code>Jack</code>.</p>
+<h4 id="step-list-">Step List:</h4>
+<ul>
+<li>Make a dictionary called <code>aboutMe</code> that stores your <code>&quot;name&quot;</code>, <code>&quot;surname&quot;</code> and <code>&quot;age&quot;</code>.<ul>
+<li>Remember that your age should be an integer, and not a string!</li>
+</ul>
+</li>
+<li>Print out the details from the dictionary, so that at the <strong>StdOut</strong> (output), we see something similar to: <code>My name is Jack Homebrew, and I am 14 years old.</code>.<ul>
+<li>Remeber you can use commas to separate variables and strings inside the print function&#39;s brackets like: <code>print(&quot;I own&quot;, noAnimals, animal)</code>.</li>
+</ul>
+</li>
+</ul>
+<p>Also note, that like arrays, we can write dictionaries across multiple lines. The computer doesn&#39;t stop reading the dictionary until it sees the closing brace (bracket).</p>
+<p>So <code>firstDictionary</code> could be written as:</p>
+<pre><code class="lang-python">firstDictionary = { &quot;name&quot;: &quot;Jack&quot;,
+                    &quot;surname&quot;: &quot;Homebrew&quot; }
+</code></pre>
+<ul>
+<li>Update your dictionary with a friend&#39;s details, this is done like when we update an array. Try and work out how!</li>
+<li>Add a new field to your dictionary with the key: <code>&quot;height&quot;</code>, and the value of your friend&#39;s height. Do this without modifying your original dictionary!<ul>
+<li>Unlike arrays, we don&#39;t <em>append</em> values to a dict. We simply act as if we&#39;re updating a value, and the dictionary will automatically add it to the dict.</li>
+</ul>
+</li>
+<li>Print your details again, but add some information about your height!</li>
+</ul>
+<h4 id="really-not-sure-here-s-some-example-code-">Really not sure? Here&#39;s some example code.</h4>
+<pre><code class="lang-python">aboutMe = { &quot;name&quot;: &quot;Jack&quot;,
+            &quot;surname&quot;: &quot;Homebrew&quot;,
+            # No speech marks because it&#39;s an integer!
+            &quot;age&quot; : 14 }     
+
+# Printing the details
+print(&quot;My name is&quot;, aboutMe[&quot;name&quot;], aboutMe[&quot;surname&quot;],
+      &quot;, and I am&quot;, aboutMe[&quot;age&quot;], &quot;years old.&quot;)
+
+# Updating the values
+aboutMe[&quot;name&quot;] = &quot;Cameron&quot;
+aboutMe[&quot;surname&quot;] = &quot;Junior&quot;
+aboutMe[&quot;age&quot;] = 13
+
+# Adding a new value
+aboutMe[&quot;height&quot;] = &quot;134 cm&quot;
+
+# Printing information about the friend
+print(&quot;My friend&#39;s name is&quot;, aboutMe[&quot;name&quot;], aboutMe[&quot;surname&quot;],
+      &quot;, and they are&quot;, aboutMe[&quot;age&quot;], &quot;years old.&quot;,
+      &quot;They are also&quot;, height, &quot;tall!&quot;)
+
+# Remember you can split the print function over multiple lines too!
+</code></pre>
+<h2 id="task-2-looping-for-each-letter">Task 2: Looping for each letter</h2>
+<p>Since Morse code is translated character by character, we need to translate character by character in our program too. Since we will be the same thing to each character for every character in the phrase (that means a predefined length), what could we use?</p>
+<p>A FOR loop! Of course! Instead of iterating over a range of numbers, we will iterate over the characters of a word. We can do this really easily. Instead of <code>for i in range(0, 10):</code>, we can use <code>for letter in &quot;string value&quot;:</code>.</p>
+<ul>
+<li>Remember that the <code>i</code> and the <code>letter</code> are just variables that we will use inside of our loop.<ul>
+<li>You can name them whatever you like, but outside of the loop, you can&#39;t access it!</li>
+<li>The variable is updated after each loop.</li>
+</ul>
+</li>
+</ul>
+<p>In this task, we&#39;ll be converting letters to their hexademical values (confused? read on for details!).</p>
+<h4 id="step-list-">Step List:</h4>
+<ul>
+<li>Ask for a word from the user, and store this in a variable.</li>
+<li>Construct a for loop, that iterates over the letters in the user&#39;s input.</li>
+<li>Print the current letter (only) in the loop.<ul>
+<li>This means printing you should print the loop variable.</li>
+</ul>
+</li>
+</ul>
+<p>What do you see? Your word completely split up into lines for each character right?!</p>
+<p>We&#39;re not going to translate to Morse code just yet, but we will convert to <strong>hexadecimal</strong>.</p>
+<h5 id="what-s-hexadecimal-">What&#39;s hexadecimal?</h5>
+<p>Hexadecimal (or hex, for short), is a number system. We use a decimal number system, meaning that we count from 0 to 9 and then we get to double digits. Computers count in binary, which is a base 2 number system. That means that computers count from 0 to 1, and then go into double digits.</p>
+<p>Hexadecimal is a base 16 number system. That means that we count from 0 to 15, and then go into double digits. Since there aren&#39;t numbers with just one digits above 9, we use letters. The units column of hexadecimal can have the value: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F. This also means that instead of a 10s column, we have a 16s number system.</p>
+<p>This means that the number 15 is F, and 16 is 10. Confusing right? Don&#39;t worry about the details too much, because we&#39;ll get the computer to convert our letters into hexadecimal numbers. We use hex since it&#39;s so much shorter to write huge numbers!</p>
+<p>Here&#39;s a table to show the basic conversion:</p>
+<p><img src="images/hex.png" alt="hexadecimal table"></p>
+<ul>
+<li>Import the <code>binascii</code> package.<ul>
+<li>This should go at the top of your code!</li>
+</ul>
+</li>
+<li>Try printing the value of <code>binascii.hexlify(&#39;Hello World!&#39;.encode())</code>. We have to have a <code>.encode()</code> after our string to tell the computer to just use the byte values! You can&#39;t forget it, otherwise there will be an error.<ul>
+<li>Do you see how the numbers are printed out? These are the hexadecimal values of the letters you used!</li>
+<li>We are using the <code>hexlify()</code> function of the <code>binascii</code> package here.</li>
+</ul>
+</li>
+<li>Ask the user what they&#39;d like to convert.</li>
+<li>Use your for loop to print the hex value of each character of the user&#39;s input.<ul>
+<li>Pretty cool right? Now this seems like computer talk!</li>
+</ul>
+</li>
+</ul>
+<h4 id="did-we-lose-you-at-hexadecimal-here-s-the-code-">Did we lose you at hexadecimal? Here&#39;s the code.</h4>
+<pre><code class="lang-python">import binascii
+
+userWord = input(&quot;What would you like converted?&quot;)
+
+# Remember the loop variable can be whatever you like
+for char in userWord:
+    # Variables make reading code easier
+    # Just convert one letter of the input
+    hex = binascii.hexlify(char.encode())
+
+    # Print the hex value!
+    print(hex)
+</code></pre>
+<p>Now we&#39;ve learnt a bit about different number systems, and looping through</p>
+<h2 id="task-3-translating-to-morse-code">Task 3: Translating to Morse code</h2>
+<p>So we can loop through characters in a string, and we can use dictionaries to store values and retrieve them later. What&#39;s left? Putting it all together of course!</p>
+<p>We&#39;re not going to ask you to make a super long dictionary with all the Morse code, so here&#39;s one for you to copy into your program&#39;s code.</p>
+<pre><code class="lang-python">morse = {&#39; &#39;: &#39; &#39;,
+        &quot;&#39;&quot;: &#39;.----.&#39;,
+        &#39;(&#39;: &#39;-.--.-&#39;,
+        &#39;)&#39;: &#39;-.--.-&#39;,
+        &#39;,&#39;: &#39;--..--&#39;,
+        &#39;-&#39;: &#39;-....-&#39;,
+        &#39;.&#39;: &#39;.-.-.-&#39;,
+        &#39;/&#39;: &#39;-..-.&#39;,
+        &#39;0&#39;: &#39;-----&#39;,
+        &#39;1&#39;: &#39;.----&#39;,
+        &#39;2&#39;: &#39;..---&#39;,
+        &#39;3&#39;: &#39;...--&#39;,
+        &#39;4&#39;: &#39;....-&#39;,
+        &#39;5&#39;: &#39;.....&#39;,
+        &#39;6&#39;: &#39;-....&#39;,
+        &#39;7&#39;: &#39;--...&#39;,
+        &#39;8&#39;: &#39;---..&#39;,
+        &#39;9&#39;: &#39;----.&#39;,
+        &#39;:&#39;: &#39;---...&#39;,
+        &#39;;&#39;: &#39;-.-.-.&#39;,
+        &#39;?&#39;: &#39;..--..&#39;,
+        &#39;A&#39;: &#39;.-&#39;,
+        &#39;B&#39;: &#39;-...&#39;,
+        &#39;C&#39;: &#39;-.-.&#39;,
+        &#39;D&#39;: &#39;-..&#39;,
+        &#39;E&#39;: &#39;.&#39;,
+        &#39;F&#39;: &#39;..-.&#39;,
+        &#39;G&#39;: &#39;--.&#39;,
+        &#39;H&#39;: &#39;....&#39;,
+        &#39;I&#39;: &#39;..&#39;,
+        &#39;J&#39;: &#39;.---&#39;,
+        &#39;K&#39;: &#39;-.-&#39;,
+        &#39;L&#39;: &#39;.-..&#39;,
+        &#39;M&#39;: &#39;--&#39;,
+        &#39;N&#39;: &#39;-.&#39;,
+        &#39;O&#39;: &#39;---&#39;,
+        &#39;P&#39;: &#39;.--.&#39;,
+        &#39;Q&#39;: &#39;--.-&#39;,
+        &#39;R&#39;: &#39;.-.&#39;,
+        &#39;S&#39;: &#39;...&#39;,
+        &#39;T&#39;: &#39;-&#39;,
+        &#39;U&#39;: &#39;..-&#39;,
+        &#39;V&#39;: &#39;...-&#39;,
+        &#39;W&#39;: &#39;.--&#39;,
+        &#39;X&#39;: &#39;-..-&#39;,
+        &#39;Y&#39;: &#39;-.--&#39;,
+        &#39;Z&#39;: &#39;--..&#39;,
+        &#39;_&#39;: &#39;..--.-&#39;}
+</code></pre>
+<p>Let&#39;s start off with using what we did before to make a line by line translation.</p>
+<h4 id="step-list-">Step List:</h4>
+<ul>
+<li>Ask the user for their phrase that needs translating.<ul>
+<li>We need to convert this to uppercase! As you can see, the Morse dictionary only has uppercase letters, if we use lowercase letters, there won&#39;t be a key to match it to. Morse code only uses uppercase letters, so convert the entire user input using <code>.upper()</code>, like <code>input(&quot;Question&quot;).upper()</code>.</li>
+</ul>
+</li>
+<li>Construct a <strong>for</strong> loop to <strong>iterate</strong> through each letter.<ul>
+<li>We <strong>iterate</strong>, because we go round and round, and repeat our code!</li>
+<li>A for loop is a program flow control structure, so it alters the way our program executes tasks.</li>
+</ul>
+</li>
+<li>Get the value from the dictionary using the letter as the key.<ul>
+<li>Since the letter is a variable, don&#39;t put apostrophies around it in the square brackets!</li>
+</ul>
+</li>
+<li>Print the Morse translation!</li>
+</ul>
+<p>What if the user enters a value that&#39;s not in the dictionary? Such as &#39;@&#39; or &#39;#&#39;? We need to make sure our program is <strong>robust</strong>, and accounts for these inputs.</p>
+<p>We can check if a key exists in a dictionary using <code>&quot;key&quot; in mydict</code>. This will <strong>return</strong> <code>True</code> if it exists, and <code>False</code> if not. We could use an if and else statement to check if the letter exists in each loop.</p>
+<p>We can do exactly the same thing with variables too. Say we have a variable, <code>letter</code>, and we want to see if the value stored in <code>letter</code> is a key in the dictionary, <code>mydict</code>. We would do the same thing as before, but replace the value (shown in speech marks before), with the variable name!</p>
+<p>That means we would use: <code>letter in mydict</code>. Simple! The output will be True of False again!</p>
+<ul>
+<li>Construct an if statement that passes if the key exists.<ul>
+<li>If the key is there, then translation is good to go on this letter!</li>
+</ul>
+</li>
+<li>Add an else statement that causes the program to print <code>NO MORSE CHARACTER</code>.<ul>
+<li>If the key isn&#39;t there, we <strong>fall through</strong> to the else statement. Therefore there isn&#39;t a key, and we must tell the user that this character cannot be translated with our data.</li>
+</ul>
+</li>
+</ul>
+<p>Hopefully you&#39;ve got something like this, under your mega-Morse-dictionary:</p>
+<pre><code class="lang-python">normalPhrase = input(&quot;What would you like to translate?&quot;).upper()
+
+for letter in normalPhrase:
+    if letter in dict:
+        translation = morse[letter]
+    else:
+        translation = &quot;NO MORSE CHARACTER&quot;
+
+    # See how I saved lines of code?
+    print(translation)
+</code></pre>
+<p>Great! This should print the translation for each letter on a new line. That&#39;s good, but let&#39;s make it into a long string, so that everything is printed on one line.</p>
+<ul>
+<li>Make an empty string before your loop.<ul>
+<li>We will be modifying it in the loop, therefore it has to have been <strong>initialised</strong> before.</li>
+<li>Stuck? Assign it the value <code>&quot;&quot;</code>.</li>
+</ul>
+</li>
+<li>Change your current loop to add the <code>translation</code> to the empty string, rather than printing it each time.</li>
+<li>Print your previously-empty string after (that means outside) of the loop.<ul>
+<li>We print it outside, because other wise we would print bits of it lots of times, which is not what we want! We want to show the user their phrase once, and no more than once!</li>
+</ul>
+</li>
+</ul>
+<p>But now we have a problem that <code>NO MORSE CHARACTER</code> might be in the middle of our translation! If we can&#39;t find a character, let&#39;s tell the user that the translation failed. Only print the translation if everything went to plan!</p>
+<ul>
+<li>Create a <strong>Boolean</strong> value before the loop called <code>transOkay</code>.<ul>
+<li>Set it to <code>True</code>. We use it at the end of our program to determine whether everything went to plan.</li>
+</ul>
+</li>
+<li>Change the else procedure to update the value of <code>transOkay</code> to <code>False</code>.<ul>
+<li>We don&#39;t change it to True after a letter was translated normally, because a bad translation may have happened beforehand.</li>
+</ul>
+</li>
+<li>Add an if statement after the loop to only print the translation if <code>transOkay</code> is <code>True</code>.<ul>
+<li>You can just use <code>if transOkay:</code>.</li>
+</ul>
+</li>
+<li>Add a corresponding else statement to print out a message to the user to say that they included a character that couldn&#39;t be translated.</li>
+</ul>
+<h4 id="did-you-get-something-similar-to-this-">Did you get something similar to this?</h4>
+<pre><code class="lang-python"># Didn&#39;t include all the dictionary to save you space here
+morse = { ... }
+
+# Asking the user for their phrase and convert to CAPITALS
+normalPhrase = input(&quot;What would you like to translate?&quot;).upper()
+
+# Making an empty translation string so we can add to it later
+translation = &quot;&quot;
+
+# Start off assuming that everything went to plan
+transOkay = True
+
+# Loop through each letter of the user&#39;s phrase
+for letter in normalPhrase:
+    # If there is key in the dictionary
+    if letter in morse:
+        # The letter can be translated, and added
+        translation += morse[letter]
+
+    # If we can&#39;t translate it
+    else:
+        # Say something went wrong!
+        transOkay = False
+
+# Print error or translation
+if transOkay:
+    print(translation)
+else:
+    print(&quot;We couldn&#39;t translate some of your characters.&quot;)
+</code></pre>
+<h3 id="what-we-ve-learnt">What we&#39;ve learnt</h3>
+<p>We&#39;ve learnt a bit more about FOR loops, and how they work when iterating through values. We&#39;ve learnt the basics of dictionaries and how their useful. But most importantly, we&#39;ve practiced our skills that we&#39;ve learnt before.</p>
+<p>Anothing important skill that you&#39;ve been able to practise is error prevention! The last thing you&#39;ll ever want the user to see is the program break, so you&#39;ve now learnt how to take measure to prevent that.</p>
+<p>Now you&#39;ve had a chance to see IF statements, FOR loops, string manipulation, arrays and dictionaries all in action, working with each other. You&#39;ve learnt the basics of computer programming with Python and have been absorbing computer science along the way. Hopefully you can use all of these skills in some projects, and more specific lessons in the future.</p>
+<p>Well done Junior Homebrewer!</p>
+<h2 id="challenge-task">Challenge Task</h2>
+<ol>
+<li>Tell the user which letter caused the error.</li>
+<li>Now we&#39;ve got a transmitter (we can send messages), but what if we get Morse code back, how will we convert it back? Make a reverse converter, so that you can enter Morse code, as it will translate it into English.</li>
+</ol>
+<h4 id="tips-">Tips:</h4>
+<ul>
+<li>Either write a reverse dictionary or iterate through the key-value pairs of the dictionary until you find your letter!</li>
+<li>Always Google and ask a teacher if you&#39;re stuck!</li>
+</ul>
+
+
+</div>
+</body>
+</html>

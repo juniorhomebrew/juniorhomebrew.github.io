@@ -1,0 +1,96 @@
+<h1 id="basic-python-turtle-commands">Basic Python Turtle Commands</h1>
+<p>You can use Python and Turtle on our site (using Google Chrome works best):
+<a href="http://hbrew.club/onlinepython"><strong>hbrew.club/onlinepython</strong></a></p>
+<table>
+<thead>
+<tr>
+<th>Python Function</th>
+<th>Example</th>
+<th>What does it do?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>forward(spaces)</td>
+<td>forward(10)</td>
+<td>Moves forward</td>
+</tr>
+<tr>
+<td>backward(spaces)</td>
+<td>backwards(10)</td>
+<td>Moves backwards</td>
+</tr>
+<tr>
+<td>right(degrees)</td>
+<td>right(20)</td>
+<td>Turns right (clockwise), on the spot</td>
+</tr>
+<tr>
+<td>left(degrees)</td>
+<td>left(90)</td>
+<td>Turns left (anticlockwise), on the spot</td>
+</tr>
+<tr>
+<td>goto(x, y)</td>
+<td>goto(20, 60)</td>
+<td>Goes to the given position</td>
+</tr>
+<tr>
+<td>speed(s)</td>
+<td>speed(10)</td>
+<td>Changes the drawing speed</td>
+</tr>
+<tr>
+<td>circle(radius)</td>
+<td>circle(5)</td>
+<td>Draws a circle</td>
+</tr>
+<tr>
+<td>dot(size, colour)</td>
+<td>dot(2, &quot;black&quot;)</td>
+<td>Draws a dot</td>
+</tr>
+<tr>
+<td>undo()</td>
+<td>undo()</td>
+<td>Undoes the last movement</td>
+</tr>
+<tr>
+<td>position()</td>
+<td>position()</td>
+<td>Gives the current co-ordinates of the turtle</td>
+</tr>
+<tr>
+<td>penup()</td>
+<td>penup()</td>
+<td>Lifts the pen up (so you can move around without drawing)</td>
+</tr>
+<tr>
+<td>pendown()</td>
+<td>pendown()</td>
+<td>Puts the pen back down</td>
+</tr>
+<tr>
+<td>pensize(width)</td>
+<td>pensize(4)</td>
+<td>Changes the width of the pen</td>
+</tr>
+<tr>
+<td>color(c)</td>
+<td>color(&quot;blue&quot;)</td>
+<td>Changes the colour of the pen (remember the American spelling)</td>
+</tr>
+</tbody>
+</table>
+<p>This is only a set of the most basic functions, thereare lots more to try out, and there are more settings for many. Look at the full list at <a href="https://docs.python.org/3.2/library/turtle.html">https://docs.python.org/3.2/library/turtle.html</a>.</p>
+<h2 id="remember-to-add-t-before-the-function-here-s-an-example-">Remember to add t. before the function, here&#39;s an example:</h2>
+<pre><code>import turtle           # Import the turtle library
+
+t = turtle.Turtle()     # Make a turtle (you need one)
+t.forward(10)           # Move the turtle forwards 10
+</code></pre><p>Sometimes, the turtle goes off the page. You can change the size of the canvas (the part where the turtle draws on) using: </p>
+<pre><code>height = 600        # The max canvas size is shown in the top
+width = 500         # right of the online Python output
+
+screen = turtle.Screen().setup(width, height)
+</code></pre>

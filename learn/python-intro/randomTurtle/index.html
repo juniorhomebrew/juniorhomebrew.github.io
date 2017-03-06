@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,400i,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <meta charset="UTF-8" />
+    <meta name="pinterest" content="nopin" />
+    <title>Randomly Walking Turtle</title>
+    <meta name="description" content="">
+</head>
+<body>
+<div class="main-container">
+    <header>
+        <a href="/"><img src="/assets/images/icon-white.png" class="mini-logo"/></a>
+    </header>
+    <h1>Randomly Walking Turtle</h1>
+    <h5 id="modules-while-boolean">MODULES, WHILE, BOOLEAN</h5>
+<p>In this lesson you will be using a <strong>module</strong> called Python Turtle. I know what you&#39;re thinking, what&#39;s a <strong>module</strong>?! Well, a <strong>module</strong> is a block of code (usually a block of code that is hard to code yourself) that somebody has already coded for you, so all you have to do is import it and save yourself lots of coding time! Every module does a different thing - this module (Python Turtle) allows you to draw shapes using a turtle that draws lines. Today, we will be using Python Turtle to draw a random path for the <strong>Turtle</strong> to follow until it gets back to its starting point. In order to do this, we are going to need another module called <strong>random</strong>.</p>
+<h2 id="task-1-setting-the-turtle-up">Task 1: Setting the turtle up</h2>
+<!-- Break into paragraphs -->
+<p>The first thing that we need to do is get the turtle module ready. For this lesson, you won&#39;t be using portable python - you will instead be using an online python emulator made for running turtle!</p>
+<!-- Steps and reasons for doing it -->
+<h4 id="step-list-">Step list:</h4>
+<ul>
+<li>Open up your web browser of choice.</li>
+<li>Go to this link: <a href="http://hbrew.club/onlinepython/index.html">http://hbrew.club/onlinepython/index.html</a><ul>
+<li>This link will take you to the online python editor</li>
+<li>Underneath <code>import turtle</code>, Type: <code>import random</code></li>
+</ul>
+</li>
+<li>Delete all code underneath the line <code>t.color(&quot;white&quot;)</code></li>
+</ul>
+<p>You are now ready to start using the Python Turtle!</p>
+<h2 id="task-2-finding-a-start-point">Task 2: Finding a Start point</h2>
+<!-- Break into paragraphs -->
+<p>Now that the turtle is set up, we need to define a start point for the turtle.</p>
+<!-- Steps and reasons for doing it -->
+<h4 id="step-list-">Step list:</h4>
+<ul>
+<li>Return to the webpage you modified in <strong>Task 1</strong>.</li>
+<li>Underneath your current code type: <code>h = t.pos()</code><ul>
+<li>This line of code is assigning the current co-ordinates of the turtle to the variable <code>h</code>.</li>
+</ul>
+</li>
+<li>On a new line type: <code>t.fd(1)</code><ul>
+<li>This line of code moves the turtle forward by one unit.</li>
+</ul>
+</li>
+</ul>
+<p>You now have the co-ordinates of the starting point of the turtle and have moved the turtle forward by one.</p>
+<h2 id="task-3-creating-a-random-path">Task 3: Creating a random path</h2>
+<!-- Break into paragraphs -->
+<p>Now that you have the starting point of your turtle you can now code a <strong>while</strong> loop. This while loop would move the turtle at a random angle for a random distance <strong>so long as</strong> the current position of the turtle is not equal to the starting position of the turtle you defined in <strong>Task 2</strong>.</p>
+<!-- Steps and reasons for doing it -->
+<h4 id="step-list-">Step List:</h4>
+<ul>
+<li>Return to the webpage you modified in <strong>Task 1</strong> and <strong>Task 2</strong>.</li>
+<li>On a new line, type: <code>t.speed(100)</code><ul>
+<li>This line makes the turtle move at a speed of 100, but you can change the speed to whatever number you like!</li>
+</ul>
+</li>
+<li>On a new line, type: <code>while t.pos() != h:</code><ul>
+<li>Make sure you add the colon on the end of this line!</li>
+<li>This line of code continuously runs the block of code underneath it, so long as the current position of the turtle is not equal to <code>h</code>, the starting position of the turtle.</li>
+</ul>
+</li>
+<li>On a new line (indented), type: <code>t.lt(random.randint(1,360))</code><ul>
+<li>This line of code in the while statement rotates the turtle left to a random degree between 1 and 360.</li>
+</ul>
+</li>
+<li>On a new line (indented), type: <code>t.fd(random.randint(1, 5))</code><ul>
+<li>This line of code moves the turtle forward between 1 and 5 units.</li>
+</ul>
+</li>
+<li>Run the code!</li>
+</ul>
+<p>Your code should look like this:</p>
+<pre><code>import turtle
+import random
+
+t = turtle.Turtle()
+t.color(&quot;white&quot;)
+
+h = t.pos()
+t.speed(500)
+t.fd(1)
+
+while t.pos() != h:
+    t.lt(random.randint(1,360))
+    t.fd(random.randint(1,5))
+</code></pre><p>Once you run the code you will see the turtle randomly moving around the screen in different directions. If you see this, congratulations! You have created a randomly walking turtle!</p>
+<p>##Challenge Task: Red, White and Blue
+<!-- Break into paragraphs -->
+If you are reading this you have probably finished the main three tasks and are seeking a challenge. well, you&#39;ve come to the right place! Your challenge today is to make your turtle randomly switch colors between red, white and blue every time it moves!</p>
+<p><strong>HINT:</strong> create an array with the three colors and <strong>randomly</strong> index the array in the <strong>while</strong> loop. </p>
+
+
+</div>
+</body>
+</html>

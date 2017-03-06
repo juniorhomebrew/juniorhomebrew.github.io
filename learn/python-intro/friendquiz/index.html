@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,400i,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <meta charset="UTF-8" />
+    <meta name="pinterest" content="nopin" />
+    <title>Who Knows Me Best?</title>
+    <meta name="description" content="">
+</head>
+<body>
+<div class="main-container">
+    <header>
+        <a href="/"><img src="/assets/images/icon-white.png" class="mini-logo"/></a>
+    </header>
+    <h1>Who Knows Me Best?</h1>
+    <h5 id="variables-inputs-outputs-and-boolean">VARIABLES, INPUTS, OUTPUTS and BOOLEAN</h5>
+<p>Have you ever wanted to see which of your friends know the most about you? Well, you could easily do this by asking your friend questions and checking if their answers are correct. But asking them in person is <em>sooooo</em> 2015.</p>
+<p>We could make this faster with a simple piece of code! If we use what we know about variables, to store the answers; and use <strong>inputs</strong>, to take your friends&#39; answers to questions; we can print out if they got the questions right or wrong!</p>
+<h2 id="task-1-printing">Task 1: Printing</h2>
+<p>When the user answers the questions we would want to tell them if they got it right or wrong. To do this we will need a way of showing something on the screen so they can read if they got it correct or incorrect. In computer science, we call this an <strong>output</strong>. That&#39;s because the computer program <strong>outputs</strong> something, for the user to see. This task will should you how it&#39;s done.</p>
+<h4 id="step-list-">Step List:</h4>
+<ul>
+<li>Get your code editor open and ready!</li>
+<li>Start the first line right at the beginning of the first line (not spaces or indents before the text).<ul>
+<li>Since we&#39;re using Python, we have to do this otherwise the program will get confused. Spaces and indents at the beginning of a line can only be used for some cases, but we&#39;ll get onto that later.</li>
+</ul>
+</li>
+<li>Type: <code>print(&quot;I like to code! &quot;)</code>.<ul>
+<li>Make sure that the first bracket is touching the word <code>print</code>, otherwise it won&#39;t work!</li>
+<li>Don&#39;t forget to use apostrophies or speech marks around &quot;I like to code!&quot;. We have to use them because <code>I like to code!</code> is a sentence, rather than a variable, which is what we&#39;ll get onto in a minute.</li>
+</ul>
+</li>
+<li>Run your program!<ul>
+<li>What did you see? If everything went well, the sentence &quot;I like to code!&quot; should be printed (or outputted) to you!</li>
+<li>Your code should look like this:
+​<code>print(&quot;I like to code!&quot;)</code></li>
+<li>In our piece of code we will be outputting if the user&#39;s answer matches the correct answer. We will talk about how to do this later!</li>
+</ul>
+</li>
+</ul>
+<h2 id="task-2-remember-variables-">Task 2: Remember variables?</h2>
+<p>When we are setting the answers for your questions we need to store them in things called variables; hopefully you&#39;ve seen these before, but here&#39;s a little reminder. Computers don&#39;t automatically remember things, instead we have to store these things so we can use them later. In this case, we need to store the answers so we can use them to check if the user&#39;s answer is same as the correct answer.</p>
+<h4 id="step-list-">Step List:</h4>
+<ul>
+<li>Make a variable with a number value, using <code>Age = 11</code><ul>
+<li>A variable is a way of storing a value. In this case, we&#39;ll store an integer value.</li>
+<li>Using the equals sign, <strong>assigns</strong> a value to the variable. This is done so that we can <strong>refer</strong> to it later.</li>
+<li>You should read it as &quot;Age refers to 11&quot;. That&#39;s how we assign things.</li>
+<li>An integer is a whole number, this means that it cannot be a fraction or a decimal.</li>
+</ul>
+</li>
+<li><code>EyeColour = &quot;brown&quot;</code><ul>
+<li>This is how we give a variable a value.</li>
+<li>In front of the equals, there is the variable name. This doesn&#39;t need speech marks.<ul>
+<li>Variable names must start with a letter, and can only include the alphabet, numbers and underscores.</li>
+</ul>
+</li>
+<li>The equals says that the left is the same as the value of the right. This way, everytime we say <code>EyeColour</code> in the rest of the program, it&#39;s the same as saying <code>&quot;brown&quot;</code>.</li>
+</ul>
+</li>
+<li>Try making a variable called <code>PetName</code>, and give it the name of your pet.</li>
+<li>Now try printing the variable.<ul>
+<li>Remember that we don&#39;t need speech marks!</li>
+<li>See what it printed out!</li>
+</ul>
+</li>
+</ul>
+<h4 id="got-lost-here-s-the-code-">Got lost? Here&#39;s the code.</h4>
+<pre><code class="lang-python">PetName = &quot;Kittens&quot;
+​
+print(PetName)
+</code></pre>
+<p>  Why do we use variables? The clue is in the name. If we need to use the pet&#39;s name a hundred different times in a long program and we decide to change it, then we will have to go to one hundred different places to do so.
+  ​
+  With a variable, <strong>we just have to change the value in one place</strong>, and then everywhere else the value changes. We can vary what the value is. We can also change the value of it half way through a program.</p>
+<h2 id="task-3-ask-the-user">Task 3: Ask the user</h2>
+<p>To check if your friend knows a lot about you, you will need to ask them questions. In our piece of code we will need to remember (store) the user&#39;s answer and check if it&#39;s the same as the answer you already stored before.
+  ​</p>
+<h4 id="step-list-">Step List:</h4>
+<ul>
+<li>Make a new variable that has nothing assigned to it.<ul>
+<li>Same as before. For example: <code>name =</code></li>
+</ul>
+</li>
+<li>Change that variable&#39;s value (the part of the right), to be <code>input()</code>.<ul>
+<li>It&#39;s very important to have the brackets touching the word input, otherwise the code won&#39;t work!</li>
+<li>When the user answers in the box, they don&#39;t need to put speech marks around what they type. The computer does this automatically when you use <code>input()</code>.</li>
+</ul>
+</li>
+<li>Run this code.<ul>
+<li>The program should come up with a little input box.</li>
+</ul>
+</li>
+<li>Change your code to print the variable.</li>
+</ul>
+<p>Your code should look like:</p>
+<pre><code class="lang-python">name = input()
+​
+print(name)
+</code></pre>
+<p>  The user doesn&#39;t know what to input unless they read the code! Let&#39;s make the pop-up box ask the user a question.</p>
+<ul>
+<li>Put your question inside the brackets of <code>input()</code>, but remember the speech marks!<ul>
+<li>Speech marks will be needed as we are using words, not variables in our question.</li>
+</ul>
+</li>
+<li>We can print multiple things in one go by using a comma in the print function.<ul>
+<li>The comma can&#39;t be in speech marks! We are not using it as a comma, but as a separator.</li>
+</ul>
+</li>
+<li>Try printing <code>&quot;Your name is&quot;</code> before the <code>name</code> variable is printed.
+​<h4 id="got-lost-here-s-the-code-">Got lost? Here&#39;s the code.</h4>
+<pre><code class="lang-python">name = input(&quot;What is your name?&quot;)
+​
+print(&quot;Your name is&quot;, name)
+</code></pre>
+​
+By using inputs the user can interact with the program. We can use variables with them, so that the user can change what the program does. If we didn&#39;t use variables, the user would have to go into the code and modify it to print their name.
+​
+Using a variable means that we only have to ask the user once, and the values are changed everywhere!</li>
+</ul>
+<h2 id="task-4-making-the-true-friend-test">Task 4: Making the true-friend test</h2>
+<p>Now that we know how to get the user to input something and store that to a variable, we can check if the user&#39;s answer is the same as the answer stored. We will do this by using something called <strong>boolean</strong>. Boolean just means that the final value can either be true or false. That&#39;s it!</p>
+<p>We get a boolean value when we compare 2 values to check if they are equal to each other. To compare two values we use double equals sign like this, <code>==</code> (this is different from just <code>=</code>, which assigns variables).</p>
+<h4 id="step-list-">Step List:</h4>
+<ul>
+<li>Make a new variable called <code>favouriteFood</code> and set it to equal your favourite food.<ul>
+<li>Same as before. For example: <code>favouriteFood = &quot;pizza&quot;</code><ul>
+<li>Remember to use quotation marks around the word on the right side.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Then type: <code>print(favouriteFood == &quot;pizza&quot;)</code>.<ul>
+<li>Remember to use a double equal sign to compare the two values.</li>
+<li>In this case, we are comparing the value stored in the &#39;favouriteFood&#39; variable, to the string (that&#39;s a series of characters), &quot;pizza&quot;.</li>
+</ul>
+</li>
+<li>Run this code.<ul>
+<li>The program should print the word <code>true</code>.</li>
+<li>This is because the value of <code>favouriteFood</code> is equal to the value of <code>&quot;pizza&quot;</code>.</li>
+</ul>
+</li>
+<li>Now change the value of the variable<code>favouriteFood</code> and see what is outputted.</li>
+</ul>
+<h4 id="got-lost-here-s-the-code-">Got lost? Here&#39;s the code.</h4>
+<pre><code class="lang-python">favouriteFood = &quot;pizza&quot;
+  ​
+print(favouriteFood == &quot;pizza&quot;)
+</code></pre>
+<p>  ​In our code we can use <strong>boolean</strong> to check if the user&#39;s answer is equal to the answer that has been previously been set!</p>
+<h2 id="what-we-ve-learnt-so-far-">What we&#39;ve learnt so far...</h2>
+<p>We&#39;ve used <strong>variables, inputs, outputs</strong> and <strong>boolean</strong> to try to see which of your friends knows most about you.</p>
+<ul>
+<li>We learnt that <strong>outputing</strong> is when you display something from your code on the screen and we do this by typing: <code>print()</code></li>
+<li>We also learnt that we use <strong>variables</strong> to store things in our program and that they are useful because we just have to change the value in one place for the value to change everywhere else.</li>
+<li>In addition, we learnt that <strong>inputs</strong> are used so the user can interact with the program. We do this by typing: <code>input()</code> and making sure the brackets touch the word &#39;input&#39;.</li>
+<li>Finally, we learnt that we use <strong>boolean</strong> to compare two values, and that the outcome will always be true or false.  To compare two values we use double equals sign like this, <code>==</code>.
+​</li>
+</ul>
+<h2 id="task-5-asking-multiple-questions">Task 5: Asking multiple questions</h2>
+<p>Now we can use all these new skills to make a piece of code that checks if the user knows you well! We can put lots of code together, and make the computer run it all. The computer reads like we do: down the page. This means that each line is run after the one above it.</p>
+<p>Here is a simple example I made earlier.</p>
+<pre><code class="lang-python">age = 11   # The correct answer is 11
+
+UserAnswer_age = int(input(&quot;What is my age? &quot;)) # User asked
+
+print (age == UserAnswer_age)
+
+food = &quot;hot dog&quot;
+UserAnswer_name = input(&quot;What is my favourite food?&quot;)
+
+print(name == UserAnswer_name)
+
+EyeColour = &quot;brown&quot;  # Correct answer for eye colour stored
+UserAnswer_EyeColour = input(&quot;What is the colour of my eyes? &quot;)
+
+print(EyeColour== UserAnswer_EyeColour)
+</code></pre>
+<h5 id="line-by-line-explanation">Line by line explanation</h5>
+<ol>
+<li>Sets the variable <code>age</code> to the value 11.<ul>
+<li>It is stored as an integer automatically, not a string!
+2.</li>
+</ul>
+</li>
+<li>Asks the user (your friend), &quot;What is my age?&quot;.<ul>
+<li>Their response is stored as a <strong>string</strong>, so we have to convert it to an integer so that we can compare it (confused? Read below).</li>
+</ul>
+</li>
+<li>blank line</li>
+<li>We compare the correct answer to the user&#39;s answer using the <code>==</code> operator. If they are the same, then the statement <code>age == UserAnswer_age</code> is <code>True</code>. If not, then it is <code>False</code>. The outcome of the comparison will be printed.
+6.</li>
+<li>The correct answer <code>&quot;hot dog</code> is stored in the variable food. We used the <code>=</code> assignment operator here, rather than the <code>==</code>, which makes a comparison.</li>
+<li>The user is asked what your favourite food is, and their answer is stored in the variable <code>UserAnswer_name</code>.<ul>
+<li>We didn&#39;t have to convert it to an integer here, because the correct answer is a string, and the input() function gives us a string too.</li>
+</ul>
+</li>
+<li></li>
+<li>A comparison of answers is made again with our <strong>Boolean operators</strong>. Remeber that <strong>Boolean</strong> means that the outcome can either be <em>True</em> or <em>False</em>, nothing else!
+11.</li>
+<li>The correct answer is again stored, but this <strong>assignment</strong> is followed by a comment, using <code>#</code>. Hopefully you know what these do! (Hint: everything after the <code>#</code> on a line is ignored by the computer)</li>
+<li>The user is asked for their response again.<ul>
+<li>Just to note: you can name a variable whatever you like (as long as it is only numbers, letters, and underscores. It also can&#39;t start with a number). We chose to user <code>UserAnswer_x</code>, because it&#39;s easy to understand what we stored in the variable. Good, sensible names are important to make you code easy to read!
+14.</li>
+</ul>
+</li>
+<li>A final <strong>Boolean</strong> comparison is made, printing either True or False to the screen.</li>
+</ol>
+<h5 id="int-">int()</h5>
+<p>In one point in the code, we have <code>int(input(&quot;What is my age&quot;))</code>. The user will hopefully enter a number. Using <code>int()</code> allows us to convert whatever the user entered into a number. Even if the user enters <code>12</code>, it will still have to be converted.</p>
+<p>This is because no matter what the user enters, it will be treated as if it were a word. But the answer is an integer (a number without a decimal point); so we convert the answer to an integer, so that we can compare the value to the answer.</p>
+<p>Even if a string (such as <code>&quot;12&quot;</code>) and an integer (such as <code>12</code>) look the same on the inside, they&#39;re not! One is number, and the other a word, so every time that we compare them, no matter what they are on the inside, they are not going to be the same.</p>
+<p>If you try to convert a string that is not numbers, you&#39;ll get an error, and your code will stop working. It&#39;s pretty obvious that you can&#39;t make <code>&quot;sausage&quot;</code> into a number! Try it!</p>
+<h2 id="challenge-task">Challenge Task</h2>
+<p>Now that we have finished the last task, lets try something a bit more challenging! Let&#39;s adapt this program so that it displays the correct answer to question when the user gets the question wrong and congratulates the user when they get the answer right.</p>
+<ul>
+<li>HINT: You may have to use <strong>if and elseif statements</strong> as well as <strong>boolean operators</strong>. (Double hint: have a Google if you don&#39;t know what if statements are! Google is a programmer&#39;s best friend!)</li>
+</ul>
+
+
+</div>
+</body>
+</html>
