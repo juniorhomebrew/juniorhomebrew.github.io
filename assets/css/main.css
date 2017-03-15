@@ -70,6 +70,7 @@ pre {
     background: rgba(0, 0, 0, 0.4);
     padding: 1em;
     border-radius: 0.2em;
+    overflow-x: scroll;
 }
 
 code {
@@ -127,6 +128,7 @@ a {
 }
 
 .mini-logo {
+    margin-right: 1em;
     width: 1em;
     float: right;
 }
